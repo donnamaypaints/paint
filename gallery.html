@@ -3,20 +3,28 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta name="description" content="Gallery of Paintings by Donna Boyes">
-    <title>Artist In The Works - Gallery</title>
+    <meta name="description" content="Gallery - Donna May Paints">
+    <title>Donna May Paints - Gallery</title>
     <link href="https://fonts.googleapis.com/css2?family=Montserrat&family=Playfair+Display&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="css/styles.css">
+    <link rel="stylesheet" href="css/gallery.css">
 </head>
 <body>
     <!-- Header -->
     <header>
-        <div class="logo">Artist In The Works</div>
+        <div class="logo">Donna May Paints</div>
+        <div class="hamburger">☰</div>
         <nav>
-            <div class="hamburger">☰</div>
             <ul class="nav-links">
                 <li><a href="index.html">Home</a></li>
-                <li><a href="gallery.html">Gallery</a></li>
+                <li class="dropdown">
+                    <a href="gallery.html">Gallery</a>
+                    <ul class="dropdown-menu">
+                        <li><a href="gallery.html#flowers">Flowers</a></li>
+                        <li><a href="gallery.html#landscape">Landscape</a></li>
+                        <li><a href="gallery.html#stilllife">Still Life</a></li>
+                    </ul>
+                </li>
                 <li><a href="contact.html">Contact</a></li>
                 <li><a href="blog.html">Blog</a></li>
             </ul>
@@ -26,41 +34,71 @@
     <!-- Gallery Section -->
     <section class="gallery">
         <h2>Gallery</h2>
-        <div class="gallery-grid">
-            <div class="gallery-item">
-                <img src="images/paint1.png" alt="Painting 1">
-                <div class="overlay"><p>Painting Title 1</p></div>
+        <div class="gallery-container">
+            <div class="gallery-grid">
+                <div class="gallery-item">
+                    <div class="gallery-image">
+                        <img src="images/paint1.png" alt="Painting of vibrant red and yellow flowers">
+                    </div>
+                    <div class="gallery-caption">
+                        <p>Flower Power</p>
+                    </div>
+                </div>
+                <div class="gallery-item">
+                    <div class="gallery-image">
+                        <img src="images/paint2.png" alt="Painting of three small birds nests with blue eggs">
+                    </div>
+                    <div class="gallery-caption">
+                        <p>Eggies n Birdies</p>
+                    </div>
+                </div>
+                <div class="gallery-item">
+                    <div class="gallery-image">
+                        <img src="images/paint3.png" alt="Painting of worn brown leather boots">
+                    </div>
+                    <div class="gallery-caption">
+                        <p>Boots!</p>
+                    </div>
+                </div>
+                <div class="gallery-item">
+                    <div class="gallery-image">
+                        <img src="images/paint4.png" alt="Abstract painting with blue tones">
+                    </div>
+                    <div class="gallery-caption">
+                        <p>Abstract Blues</p>
+                    </div>
+                </div>
+                <div class="gallery-item">
+                    <div class="gallery-image">
+                        <img src="images/paint5.png" alt="Painting of a forest scene with light filtering through trees">
+                    </div>
+                    <div class="gallery-caption">
+                        <p>Forest Light</p>
+                    </div>
+                </div>
+                <div class="gallery-item">
+                    <div class="gallery-image">
+                        <img src="images/paint6.png" alt="Painting of a rainy cityscape">
+                    </div>
+                    <div class="gallery-caption">
+                        <p>Cityscape Rain</p>
+                    </div>
+                </div>
+                <div class="gallery-item">
+                    <div class="gallery-image">
+                        <img src="images/paint7.png" alt="Painting of a mountain landscape">
+                    </div>
+                    <div class="gallery-caption">
+                        <p>Mountain View</p>
+                    </div>
+                </div>
             </div>
-            <div class="gallery-item">
-                <img src="images/paint2.png" alt="Painting 2">
-                <div class="overlay"><p>Painting Title 2</p></div>
-            </div>
-            <div class="gallery-item">
-                <img src="images/paint3.png" alt="Painting 3">
-                <div class="overlay"><p>Painting Title 3</p></div>
-            </div>
-            <div class="gallery-item">
-                <img src="images/paint4.png" alt="Painting 4">
-                <div class="overlay"><p>Painting Title 4</p></div>
-            </div>
-            <div class="gallery-item">
-                <img src="images/paint5.png" alt="Painting 5">
-                <div class="overlay"><p>Painting Title 5</p></div>
-            </div>
-            <div class="gallery-item">
-                <img src="images/paint6.png" alt="Painting 6">
-                <div class="overlay"><p>Painting Title 6</p></div>
-            </div>
-            <div class="gallery-item">
-                <img src="images/paint7.png" alt="Painting 7">
-            </div>
-            
         </div>
     </section>
 
     <!-- Footer -->
     <footer>
-        <p>&copy; 2025 Artist In The Works</p>
+        <p>&copy; 2025 Donna May Paints</p>
         <div class="social-links">
             <a href="#">Instagram</a>
         </div>
@@ -68,4 +106,4 @@
 
     <script src="js/script.js"></script>
 </body>
-</html>
+</html> 

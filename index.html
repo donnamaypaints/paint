@@ -3,67 +3,90 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta name="description" content="Artist In The Works - Paintings by Donna Boyes">
-    <title>Artist In The Works - Home</title>
+    <meta name="description" content="Donna May Paints - Paintings by Donna Boyes">
+    <title>Donna May Paints - Home</title>
     <link href="https://fonts.googleapis.com/css2?family=Montserrat&family=Playfair+Display&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="css/styles.css">
+    <link rel="stylesheet" href="css/gallery.css">
 </head>
 <body>
     <!-- Header -->
     <header>
-        <div class="logo">Artist In The Works</div>
+        <div class="logo">Donna May Paints</div>
+        <div class="hamburger">☰</div>
         <nav>
-            <div class="hamburger">☰</div>
             <ul class="nav-links">
                 <li><a href="index.html">Home</a></li>
-                <li><a href="gallery.html">Gallery</a></li>
+                <li class="dropdown">
+                    <a href="gallery.html">Gallery</a>
+                    <ul class="dropdown-menu">
+                        <li><a href="gallery.html#flowers">Flowers</a></li>
+                        <li><a href="gallery.html#landscape">Landscape</a></li>
+                        <li><a href="gallery.html#stilllife">Still Life</a></li>
+                    </ul>
+                </li>
                 <li><a href="contact.html">Contact</a></li>
                 <li><a href="blog.html">Blog</a></li>
             </ul>
         </nav>
     </header>
 
-    <!-- Hero Section -->
-    <section class="hero">
-        <h1>Donna Boyes</h1>
-        <p>Painter of Life's Beauty</p>
-    </section>
+    <!-- Main Content -->
+    <main>
+        <!-- Introduction Section -->
+        <section class="intro">
+            <p>Joy Painter</p>
+            <p>Creating vibrant expressions of life's beauty through color and texture.</p>
+        </section>
 
-    <!-- Introduction Section -->
-    <section class="intro">
-        <h2>About the Artist</h2>
-        <p>لوريم إيبسوم دولور سيت أميت، كونسيكتيتور أديبيسيسينغ إيليت. سيد دو إيوسمود تيمبور إنسيديدونت أوت لابوري إت دولوري ماغنا أليكا.</p>
-        <p>فنسنت فان جوخ كان رسامًا هولنديًا شهيرًا، معروفًا بأعماله الفنية المذهلة التي تتضمن "ليلة النجوم" و"زهور عباد الشمس". على الرغم من أنه لم يكن مشهورًا خلال حياته، إلا أن أعماله الآن تعتبر من بين الأكثر شهرة في العالم.</p>
-        <a href="gallery.html" class="cta-button">View Full Gallery</a>
-    </section>
-
-    <!-- Featured Gallery Section -->
-    <section class="featured-gallery">
-        <h2>Featured Works</h2>
-        <div class="gallery-grid">
-            <div class="gallery-item">
-                <img src="images/paint1.png" alt="Painting 1">
-                <caption>Flower Power</caption>
+        <!-- Featured Gallery Section -->
+        <section class="featured-gallery">
+            <h2>Featured Works</h2>
+            <div class="gallery-container">
+                <div class="gallery-grid">
+                    <div class="gallery-item">
+                        <div class="gallery-image">
+                            <img src="images/paint1.png" alt="Painting of vibrant red and yellow flowers">
+                        </div>
+                        <div class="gallery-caption">
+                            <p>Flower Power</p>
+                        </div>
+                    </div>
+                    <div class="gallery-item">
+                        <div class="gallery-image">
+                            <img src="images/paint2.png" alt="Painting of three small birds nests with blue eggs">
+                        </div>
+                        <div class="gallery-caption">
+                            <p>Eggies n Birdies</p>
+                        </div>
+                    </div>
+                    <div class="gallery-item">
+                        <div class="gallery-image">
+                            <img src="images/paint3.png" alt="Painting of worn brown leather boots">
+                        </div>
+                        <div class="gallery-caption">
+                            <p>Boots!</p>
+                        </div>
+                    </div>
+                </div>
             </div>
-            <div class="gallery-item">
-                <img src="images/paint2.png" alt="Painting 2">
-                <caption>Eggies n Birdies</caption>
-            </div>
-            <div class="gallery-item">
-                <img src="images/paint3.png" alt="Painting 3">
-                <caption>Boots!</caption>
-            </div>
-        </div>
-    </section>
+        </section>
+    </main>
 
     <!-- Footer -->
     <footer>
-        <p>&copy; 2025 Artist In The Works</p>
+        <p>&copy; 2025 Donna May Paints</p>
         <div class="social-links">
             <a href="#">Instagram</a>
         </div>
     </footer>
 
+    <!-- Image Popup -->
+    <div id="imagePopup" class="popup" style="display: none;">
+        <span class="close">X</span>
+        <img id="popup-img" alt="Enlarged gallery image">
+    </div>
+
     <script src="js/script.js"></script>
 </body>
-</html>
+</html> 
