@@ -3,64 +3,112 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta name="description" content="Blog by Donna Boyes">
-    <title>Donna May Paints - Blog</title>
-    <link href="https://fonts.googleapis.com/css2?family=Montserrat&family=Playfair+Display&display=swap" rel="stylesheet">
+    <title>Blog - Donna May Paints</title>
     <link rel="stylesheet" href="css/styles.css">
+    <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@300;400;500&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
 </head>
 <body>
-    <!-- Header -->
+    <div class="paint-drip"></div>
     <header>
-        <div class="logo">Donna May Paints</div>
-        <div class="hamburger">☰</div>
-        <nav>
-            <ul class="nav-links">
-                <li><a href="index.html">Home</a></li>
-                <li class="dropdown">
-                    <a href="gallery.html">Gallery</a>
-                    <ul class="dropdown-menu">
-                        <li><a href="gallery.html#flowers">Flowers</a></li>
-                        <li><a href="gallery.html#landscape">Landscape</a></li>
-                        <li><a href="gallery.html#stilllife">Still Life</a></li>
+        <div class="container">
+            <div class="header-content">
+                <a href="index.html" class="logo">Donna May Paints</a>
+                <nav>
+                    <ul>
+                        <li><a href="index.html">Home</a></li>
+                        <li><a href="gallery.html">Gallery</a></li>
+                        <li><a href="about.html">About</a></li>
+                        <li><a href="blog.html">Blog</a></li>
                     </ul>
-                </li>
-                <li><a href="contact.html">Contact</a></li>
-                <li><a href="blog.html">Blog</a></li>
-            </ul>
-        </nav>
+                </nav>
+            </div>
+        </div>
     </header>
 
-    <!-- Blog Section -->
-    <section class="blog">
-        <h2>Donna May Writes</h2>
-        <article>
-            <h3>Finding Inspiration on Nature Walks</h3>
-            <p class="date">October 10, 2025</p>
-            <p>Went for a walk this morning and wow! The sunlight through the trees was so pretty. Saw a deer. It got me thinking about maybe trying out those burgundy colors I bought last month? Not sure yet but feeling inspired!</p>
-            <a href="#">Read More</a>
-        </article>
-        <article>
-            <h3>Navigating Self-Doubt and Artistic Fatigue</h3>
-            <p class="date">October 5, 2025</p>
-            <p>Ugh, having one of those days where nothing looks right on canvas. Been staring at this painting for hours and honestly just want to toss it. Maybe I'll take a break and try again tomorrow? Art is hard sometimes...</p>
-            <a href="#">Read More</a>
-        </article>
-        <article>
-            <h3>The Joy of Breakthrough Moments</h3>
-            <p class="date">September 30, 2025</p>
-            <p>OMG finally figured out how to get that glowy effect I've been trying for!! Not even sure how it happened - was just mixing colors and suddenly it worked? So excited to show everyone at the next gallery meetup!</p>
-            <a href="#">Read More</a>
-        </article>
+    <section class="container">
+        <h1 class="section-title">Artist's Journal</h1>
+        
+        <div class="blog-grid">
+            <div class="blog-card fade-in">
+                <div class="blog-image">
+                    <img src="images/paint17.jpeg" alt="New Exhibition">
+                </div>
+                <div class="blog-content">
+                    <div class="blog-date">June 15, 2023</div>
+                    <h3 class="blog-title">Upcoming Exhibition: Colors of Memory</h3>
+                    <p class="blog-excerpt">I'm thrilled to announce my newest exhibition opening next month at the Hamilton Gallery. This collection explores themes of memory and perception through a vibrant color palette.</p>
+                    <a href="blog/colors-of-memory.html" class="btn">Read More</a>
+                </div>
+            </div>
+            
+            <div class="blog-card fade-in">
+                <div class="blog-image">
+                    <img src="images/paint18.jpeg" alt="Studio Process">
+                </div>
+                <div class="blog-content">
+                    <div class="blog-date">May 3, 2023</div>
+                    <h3 class="blog-title">Studio Process: Layering Techniques</h3>
+                    <p class="blog-excerpt">In this post, I share my approach to creating depth through layering. Learn about my favorite mediums and how I achieve translucent effects in my recent landscape series.</p>
+                    <a href="blog/layering-techniques.html" class="btn">Read More</a>
+                </div>
+            </div>
+            
+            <div class="blog-card fade-in">
+                <div class="blog-image">
+                    <img src="images/paint19.jpeg" alt="Artist Retreat">
+                </div>
+                <div class="blog-content">
+                    <div class="blog-date">April 12, 2023</div>
+                    <h3 class="blog-title">Artist Retreat: Finding Inspiration in Nature</h3>
+                    <p class="blog-excerpt">My recent retreat to the Canadian Rockies has profoundly influenced my new work. Here I reflect on the experience and share some plein air studies that will inform my next series.</p>
+                    <a href="blog/artist-retreat.html" class="btn">Read More</a>
+                </div>
+            </div>
+            
+            <div class="blog-card fade-in">
+                <div class="blog-image">
+                    <img src="images/paint20.jpeg" alt="Color Theory">
+                </div>
+                <div class="blog-content">
+                    <div class="blog-date">March 28, 2023</div>
+                    <h3 class="blog-title">Color Theory in Practice: Beyond the Basics</h3>
+                    <p class="blog-excerpt">How do emotional responses to color inform my palette choices? In this post, I discuss my personal approach to color theory and how it has evolved throughout my career.</p>
+                    <a href="blog/color-theory.html" class="btn">Read More</a>
+                </div>
+            </div>
+        </div>
     </section>
 
-    <!-- Footer -->
     <footer>
-        <p>&copy; 2025 Donna May Paints</p>
-        <div class="social-links">
-            <a href="#">Instagram</a>
+        <div class="container">
+            <div class="social-links">
+                <a href="#"><i class="fab fa-instagram"></i></a>
+                <a href="#"><i class="fab fa-facebook"></i></a>
+                <a href="#"><i class="fab fa-pinterest"></i></a>
+                <a href="#"><i class="fab fa-twitter"></i></a>
+            </div>
+            <p class="footer-text">&copy; 2023 Donna May Paints. All rights reserved.</p>
         </div>
     </footer>
 
-    <script src="js/script.js"></script>
+    <script>
+        document.addEventListener('DOMContentLoaded', function() {
+            // Fade in elements as they scroll into view
+            const fadeElements = document.querySelectorAll('.fade-in');
+            
+            const observer = new IntersectionObserver((entries) => {
+                entries.forEach(entry => {
+                    if (entry.isIntersecting) {
+                        entry.target.classList.add('visible');
+                    }
+                });
+            });
+            
+            fadeElements.forEach(element => {
+                observer.observe(element);
+            });
+        });
+    </script>
 </body>
-</html>
+</html> 

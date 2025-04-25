@@ -3,107 +3,224 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta name="description" content="Gallery - Donna May Paints">
-    <title>Donna May Paints - Gallery</title>
-    <link href="https://fonts.googleapis.com/css2?family=Montserrat&family=Playfair+Display&display=swap" rel="stylesheet">
+    <title>Gallery - Donna May Paints</title>
     <link rel="stylesheet" href="css/styles.css">
-    <link rel="stylesheet" href="css/gallery.css">
+    <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@300;400;500&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
 </head>
 <body>
-    <!-- Header -->
+    <div class="paint-drip"></div>
     <header>
-        <div class="logo">Donna May Paints</div>
-        <div class="hamburger">☰</div>
-        <nav>
-            <ul class="nav-links">
-                <li><a href="index.html">Home</a></li>
-                <li class="dropdown">
-                    <a href="gallery.html">Gallery</a>
-                    <ul class="dropdown-menu">
-                        <li><a href="gallery.html#flowers">Flowers</a></li>
-                        <li><a href="gallery.html#landscape">Landscape</a></li>
-                        <li><a href="gallery.html#stilllife">Still Life</a></li>
+        <div class="container">
+            <div class="header-content">
+                <a href="index.html" class="logo">Donna May Paints</a>
+                <nav>
+                    <ul>
+                        <li><a href="index.html">Home</a></li>
+                        <li><a href="gallery.html">Gallery</a></li>
+                        <li><a href="about.html">About</a></li>
+                        <li><a href="blog.html">Blog</a></li>
                     </ul>
-                </li>
-                <li><a href="contact.html">Contact</a></li>
-                <li><a href="blog.html">Blog</a></li>
-            </ul>
-        </nav>
+                </nav>
+            </div>
+        </div>
     </header>
 
-    <!-- Gallery Section -->
-    <section class="gallery">
-        <h2>Gallery</h2>
-        <div class="gallery-container">
-            <div class="gallery-grid">
-                <div class="gallery-item">
-                    <div class="gallery-image">
-                        <img src="images/paint1.png" alt="Painting of vibrant red and yellow flowers">
-                    </div>
-                    <div class="gallery-caption">
-                        <p>Flower Power</p>
-                    </div>
+    <section class="container">
+        <h1 class="section-title">Gallery</h1>
+        
+        <div class="gallery-categories">
+            <div class="gallery-category active" data-category="abstract">Abstract</div>
+            <div class="gallery-category" data-category="landscape">Landscape</div>
+            <div class="gallery-category" data-category="portrait">Portrait</div>
+        </div>
+        
+        <div class="gallery-grid" id="abstract-gallery">
+            <div class="gallery-item gallery-animate fade-in">
+                <img src="images/paint5.jpeg" alt="Abstract 1">
+                <div class="gallery-overlay">
+                    <h3>Luminous Fragments</h3>
+                    <p>Mixed media on canvas, 2023</p>
                 </div>
-                <div class="gallery-item">
-                    <div class="gallery-image">
-                        <img src="images/paint2.png" alt="Painting of three small birds nests with blue eggs">
-                    </div>
-                    <div class="gallery-caption">
-                        <p>Eggies n Birdies</p>
-                    </div>
+            </div>
+            <div class="gallery-item gallery-animate fade-in">
+                <img src="images/paint6.jpeg" alt="Abstract 2">
+                <div class="gallery-overlay">
+                    <h3>Echoes of Memory</h3>
+                    <p>Acrylic on panel, 2022</p>
                 </div>
-                <div class="gallery-item">
-                    <div class="gallery-image">
-                        <img src="images/paint3.png" alt="Painting of worn brown leather boots">
-                    </div>
-                    <div class="gallery-caption">
-                        <p>Boots!</p>
-                    </div>
+            </div>
+            <div class="gallery-item gallery-animate fade-in">
+                <img src="images/paint7.jpeg" alt="Abstract 3">
+                <div class="gallery-overlay">
+                    <h3>Silent Revolution</h3>
+                    <p>Oil on canvas, 2023</p>
                 </div>
-                <div class="gallery-item">
-                    <div class="gallery-image">
-                        <img src="images/paint4.png" alt="Abstract painting with blue tones">
-                    </div>
-                    <div class="gallery-caption">
-                        <p>Abstract Blues</p>
-                    </div>
+            </div>
+            <div class="gallery-item gallery-animate fade-in">
+                <img src="images/paint8.jpeg" alt="Abstract 4">
+                <div class="gallery-overlay">
+                    <h3>Fractured Light</h3>
+                    <p>Mixed media, 2022</p>
                 </div>
-                <div class="gallery-item">
-                    <div class="gallery-image">
-                        <img src="images/paint5.png" alt="Painting of a forest scene with light filtering through trees">
-                    </div>
-                    <div class="gallery-caption">
-                        <p>Forest Light</p>
-                    </div>
+            </div>
+        </div>
+        
+        <div class="gallery-grid hidden" id="landscape-gallery">
+            <div class="gallery-item gallery-animate fade-in">
+                <img src="images/paint9.jpeg" alt="Landscape 1">
+                <div class="gallery-overlay">
+                    <h3>Northern Shores</h3>
+                    <p>Oil on canvas, 2023</p>
                 </div>
-                <div class="gallery-item">
-                    <div class="gallery-image">
-                        <img src="images/paint6.png" alt="Painting of a rainy cityscape">
-                    </div>
-                    <div class="gallery-caption">
-                        <p>Cityscape Rain</p>
-                    </div>
+            </div>
+            <div class="gallery-item gallery-animate fade-in">
+                <img src="images/paint10.jpeg" alt="Landscape 2">
+                <div class="gallery-overlay">
+                    <h3>Mountain Shadow</h3>
+                    <p>Acrylic on canvas, 2021</p>
                 </div>
-                <div class="gallery-item">
-                    <div class="gallery-image">
-                        <img src="images/paint7.png" alt="Painting of a mountain landscape">
-                    </div>
-                    <div class="gallery-caption">
-                        <p>Mountain View</p>
-                    </div>
+            </div>
+            <div class="gallery-item gallery-animate fade-in">
+                <img src="images/paint11.jpeg" alt="Landscape 3">
+                <div class="gallery-overlay">
+                    <h3>Prairie Light</h3>
+                    <p>Oil on linen, 2022</p>
+                </div>
+            </div>
+            <div class="gallery-item gallery-animate fade-in">
+                <img src="images/paint12.jpeg" alt="Landscape 4">
+                <div class="gallery-overlay">
+                    <h3>Coastal Memory</h3>
+                    <p>Mixed media, 2022</p>
+                </div>
+            </div>
+        </div>
+        
+        <div class="gallery-grid hidden" id="portrait-gallery">
+            <div class="gallery-item gallery-animate fade-in">
+                <img src="images/paint13.jpeg" alt="Portrait 1">
+                <div class="gallery-overlay">
+                    <h3>The Gaze</h3>
+                    <p>Oil on canvas, 2023</p>
+                </div>
+            </div>
+            <div class="gallery-item gallery-animate fade-in">
+                <img src="images/paint14.jpeg" alt="Portrait 2">
+                <div class="gallery-overlay">
+                    <h3>Contemplation</h3>
+                    <p>Mixed media, 2022</p>
+                </div>
+            </div>
+            <div class="gallery-item gallery-animate fade-in">
+                <img src="images/paint15.jpeg" alt="Portrait 3">
+                <div class="gallery-overlay">
+                    <h3>Between Worlds</h3>
+                    <p>Acrylic on panel, 2021</p>
+                </div>
+            </div>
+            <div class="gallery-item gallery-animate fade-in">
+                <img src="images/paint16.jpeg" alt="Portrait 4">
+                <div class="gallery-overlay">
+                    <h3>Inner Light</h3>
+                    <p>Oil on linen, 2023</p>
                 </div>
             </div>
         </div>
     </section>
 
-    <!-- Footer -->
     <footer>
-        <p>&copy; 2025 Donna May Paints</p>
-        <div class="social-links">
-            <a href="#">Instagram</a>
+        <div class="container">
+            <div class="social-links">
+                <a href="#"><i class="fab fa-instagram"></i></a>
+                <a href="#"><i class="fab fa-facebook"></i></a>
+                <a href="#"><i class="fab fa-pinterest"></i></a>
+                <a href="#"><i class="fab fa-twitter"></i></a>
+            </div>
+            <p class="footer-text">&copy; 2023 Donna May Paints. All rights reserved.</p>
         </div>
     </footer>
 
-    <script src="js/script.js"></script>
+    <script>
+        document.addEventListener('DOMContentLoaded', function() {
+            // Fade in elements as they scroll into view
+            const fadeElements = document.querySelectorAll('.fade-in');
+            
+            const observer = new IntersectionObserver((entries) => {
+                entries.forEach(entry => {
+                    if (entry.isIntersecting) {
+                        entry.target.classList.add('visible');
+                    }
+                });
+            });
+            
+            fadeElements.forEach(element => {
+                observer.observe(element);
+            });
+            
+            // Gallery category switching
+            const categories = document.querySelectorAll('.gallery-category');
+            const galleries = document.querySelectorAll('.gallery-grid');
+            
+            categories.forEach(category => {
+                category.addEventListener('click', function() {
+                    const targetCategory = this.getAttribute('data-category');
+                    
+                    // Highlight selected category
+                    categories.forEach(cat => cat.classList.remove('active'));
+                    this.classList.add('active');
+                    
+                    // Show selected gallery
+                    galleries.forEach(gallery => {
+                        if (gallery.id === targetCategory + '-gallery') {
+                            gallery.classList.remove('hidden');
+                            // Animate items
+                            const items = gallery.querySelectorAll('.gallery-animate');
+                            items.forEach((item, index) => {
+                                setTimeout(() => {
+                                    item.classList.remove('hidden');
+                                }, index * 100);
+                            });
+                        } else {
+                            gallery.classList.add('hidden');
+                        }
+                    });
+                });
+            });
+            
+            // Create dynamic paint drip effect - optimize for mobile
+            const paintDrip = document.querySelector('.paint-drip');
+            const isMobile = window.innerWidth <= 768;
+            const dropInterval = isMobile ? 3000 : 2000; // Less frequent on mobile
+            const maxDrops = isMobile ? 5 : 10; // Fewer drops on mobile
+            let activeDrops = 0;
+            
+            function addPaintDrop() {
+                // Limit total number of drops for performance
+                if (activeDrops >= maxDrops) return;
+                
+                activeDrops++;
+                const drop = document.createElement('span');
+                drop.classList.add('paint-drop');
+                drop.style.left = Math.random() * 100 + '%';
+                drop.style.animationDuration = (Math.random() * 2 + 2) + 's';
+                paintDrip.appendChild(drop);
+                
+                setTimeout(() => {
+                    drop.remove();
+                    activeDrops--;
+                }, 4000);
+            }
+            
+            // Initial drops
+            for (let i = 0; i < (isMobile ? 3 : 5); i++) {
+                setTimeout(() => {
+                    addPaintDrop();
+                }, i * 500);
+            }
+            
+            setInterval(addPaintDrop, dropInterval);
+        });
+    </script>
 </body>
 </html> 
