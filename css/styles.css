@@ -112,47 +112,6 @@ nav a:hover::before {
     right: auto;
 }
 
-/* Paint drip effect - reimagined */
-.paint-drip {
-    position: absolute;
-    top: 0;
-    left: 0;
-    width: 100%;
-    height: 5px;
-    overflow: hidden;
-    z-index: 100;
-}
-
-.paint-drip::before {
-    content: '';
-    position: absolute;
-    top: -5px;
-    left: 0;
-    width: 100%;
-    height: 10px;
-    background: linear-gradient(90deg, var(--burgundy), var(--accent), var(--secondary-accent), var(--burgundy));
-    animation: paint-flow 15s infinite linear;
-}
-
-.paint-drip::after {
-    content: '';
-    position: absolute;
-    bottom: 0;
-    left: 0;
-    width: 100%;
-    height: 5px;
-    background: linear-gradient(transparent, rgba(30, 30, 36, 0.5));
-}
-
-@keyframes paint-flow {
-    0% {
-        transform: translateX(-50%);
-    }
-    100% {
-        transform: translateX(50%);
-    }
-}
-
 /* Hero section */
 .hero {
     height: 85vh;
@@ -547,33 +506,6 @@ h1 {
         gap: 1rem;
         margin-bottom: 2rem;
     }
-    
-    /* Adjust paint effects for mobile */
-    .paint-drip {
-        height: 3px;
-    }
-    
-    .paint-drop {
-        width: 2px;
-    }
-    
-    @keyframes drip {
-        0% {
-            height: 0;
-            top: 0;
-            opacity: 0.7;
-        }
-        70% {
-            height: 10px;
-            top: 0;
-            opacity: 0.7;
-        }
-        100% {
-            height: 0;
-            top: 100vh;
-            opacity: 0;
-        }
-    }
 }
 
 /* Gallery categories styles */
@@ -593,6 +525,7 @@ h1 {
     transition: all 0.3s;
     position: relative;
     overflow: hidden;
+    color: var(--off-white);
 }
 
 .gallery-category::before {
@@ -604,7 +537,7 @@ h1 {
     height: 100%;
     background-color: var(--burgundy);
     transition: width 0.3s ease;
-    z-index: 0;
+    z-index: -1;
 }
 
 .gallery-category:hover::before,
@@ -612,10 +545,12 @@ h1 {
     width: 100%;
 }
 
-.gallery-category:hover {
-    color: var(--light-text);
+.gallery-category span {
+    position: relative;
+    z-index: 1;
 }
 
+.gallery-category:hover,
 .gallery-category.active {
     color: var(--light-text);
 }
@@ -796,36 +731,6 @@ footer {
 
 .popup .close:hover {
     color: var(--burgundy);
-}
-
-/* Paint drop animation */
-.paint-drop {
-    position: absolute;
-    top: 0;
-    width: 3px;
-    height: 15px;
-    background-color: var(--burgundy);
-    border-radius: 0 0 3px 3px;
-    animation: drip 3s linear forwards;
-    z-index: 10;
-}
-
-@keyframes drip {
-    0% {
-        height: 0;
-        top: 0;
-        opacity: 0.7;
-    }
-    70% {
-        height: 15px;
-        top: 0;
-        opacity: 0.7;
-    }
-    100% {
-        height: 0;
-        top: 100vh;
-        opacity: 0;
-    }
 }
 
 /* Footer styling enhancement */
