@@ -38,29 +38,29 @@
             <div class="gallery-item gallery-animate fade-in">
                 <img src="images/paint5.jpeg" alt="Abstract 1">
                 <div class="gallery-overlay">
-                    <h3>Luminous Fragments</h3>
-                    <p>Mixed media on canvas, 2023</p>
+                    <h3></h3>
+                    <p></p>
                 </div>
             </div>
             <div class="gallery-item gallery-animate fade-in">
                 <img src="images/paint6.jpeg" alt="Abstract 2">
                 <div class="gallery-overlay">
-                    <h3>Echoes of Memory</h3>
-                    <p>Acrylic on panel, 2022</p>
+                    <h3></h3>
+                    <p></p>
                 </div>
             </div>
             <div class="gallery-item gallery-animate fade-in">
                 <img src="images/paint7.jpeg" alt="Abstract 3">
                 <div class="gallery-overlay">
-                    <h3>Silent Revolution</h3>
-                    <p>Oil on canvas, 2023</p>
+                    <h3></h3>
+                    <p></p>
                 </div>
             </div>
             <div class="gallery-item gallery-animate fade-in">
                 <img src="images/paint8.jpeg" alt="Abstract 4">
                 <div class="gallery-overlay">
-                    <h3>Fractured Light</h3>
-                    <p>Mixed media, 2022</p>
+                    <h3></h3>
+                    <p></p>
                 </div>
             </div>
         </div>
@@ -69,29 +69,29 @@
             <div class="gallery-item gallery-animate fade-in">
                 <img src="images/paint9.jpeg" alt="Landscape 1">
                 <div class="gallery-overlay">
-                    <h3>Northern Shores</h3>
-                    <p>Oil on canvas, 2023</p>
+                    <h3></h3>
+                    <p></p>
                 </div>
             </div>
             <div class="gallery-item gallery-animate fade-in">
                 <img src="images/paint10.jpeg" alt="Landscape 2">
                 <div class="gallery-overlay">
-                    <h3>Mountain Shadow</h3>
-                    <p>Acrylic on canvas, 2021</p>
+                    <h3></h3>
+                    <p></p>
                 </div>
             </div>
             <div class="gallery-item gallery-animate fade-in">
                 <img src="images/paint11.jpeg" alt="Landscape 3">
                 <div class="gallery-overlay">
-                    <h3>Prairie Light</h3>
-                    <p>Oil on linen, 2022</p>
+                    <h3></h3>
+                    <p></p>
                 </div>
             </div>
             <div class="gallery-item gallery-animate fade-in">
                 <img src="images/paint12.jpeg" alt="Landscape 4">
                 <div class="gallery-overlay">
-                    <h3>Coastal Memory</h3>
-                    <p>Mixed media, 2022</p>
+                    <h3></h3>
+                    <p></p>
                 </div>
             </div>
         </div>
@@ -100,29 +100,29 @@
             <div class="gallery-item gallery-animate fade-in">
                 <img src="images/paint13.jpeg" alt="Portrait 1">
                 <div class="gallery-overlay">
-                    <h3>The Gaze</h3>
-                    <p>Oil on canvas, 2023</p>
+                    <h3></h3>
+                    <p></p>
                 </div>
             </div>
             <div class="gallery-item gallery-animate fade-in">
                 <img src="images/paint14.jpeg" alt="Portrait 2">
                 <div class="gallery-overlay">
-                    <h3>Contemplation</h3>
-                    <p>Mixed media, 2022</p>
+                    <h3></h3>
+                    <p></p>
                 </div>
             </div>
             <div class="gallery-item gallery-animate fade-in">
                 <img src="images/paint15.jpeg" alt="Portrait 3">
                 <div class="gallery-overlay">
-                    <h3>Between Worlds</h3>
-                    <p>Acrylic on panel, 2021</p>
+                    <h3></h3>
+                    <p></p>
                 </div>
             </div>
             <div class="gallery-item gallery-animate fade-in">
                 <img src="images/paint16.jpeg" alt="Portrait 4">
                 <div class="gallery-overlay">
-                    <h3>Inner Light</h3>
-                    <p>Oil on linen, 2023</p>
+                    <h3></h3>
+                    <p></p>
                 </div>
             </div>
         </div>
@@ -136,7 +136,7 @@
                 <a href="#"><i class="fab fa-pinterest"></i></a>
                 <a href="#"><i class="fab fa-twitter"></i></a>
             </div>
-            <p class="footer-text">&copy; 2023 Donna May Paints. All rights reserved.</p>
+            <p class="footer-text">&copy; 2025 Donna May Paints. All rights reserved.</p>
         </div>
     </footer>
 
@@ -185,6 +185,94 @@
                         }
                     });
                 });
+            });
+            
+            // Detect image orientation and set appropriate classes
+            function detectImageOrientation() {
+                const galleryItems = document.querySelectorAll('.gallery-item');
+                
+                galleryItems.forEach(item => {
+                    const img = item.querySelector('img');
+                    
+                    // Only process if image is loaded
+                    if (img.complete) {
+                        setOrientation(img, item);
+                    } else {
+                        img.onload = function() {
+                            setOrientation(img, item);
+                        };
+                    }
+                });
+            }
+            
+            function setOrientation(img, item) {
+                // Remove existing orientation classes
+                item.classList.remove('landscape', 'portrait');
+                
+                // Natural dimensions of the image (original size)
+                const width = img.naturalWidth;
+                const height = img.naturalHeight;
+                
+                // Determine orientation
+                if (width > height * 1.2) {
+                    // Landscape (significantly wider than tall)
+                    item.classList.add('landscape');
+                } else if (height > width * 1.2) {
+                    // Portrait (significantly taller than wide)
+                    item.classList.add('portrait');
+                }
+                // If neither, it's roughly square and stays default
+            }
+            
+            // Run orientation detection
+            detectImageOrientation();
+            
+            // Handle different device behaviors
+            const isMobile = window.matchMedia('(max-width: 768px)').matches;
+            const galleryItems = document.querySelectorAll('.gallery-item');
+            
+            if (isMobile) {
+                // MOBILE: Set up touch/click behavior
+                galleryItems.forEach(item => {
+                    item.addEventListener('click', function() {
+                        // Check if already active
+                        const isActive = this.classList.contains('active');
+                        
+                        // Remove active class from all items
+                        galleryItems.forEach(otherItem => {
+                            otherItem.classList.remove('active');
+                        });
+                        
+                        // If wasn't active before, make it active now
+                        if (!isActive) {
+                            this.classList.add('active');
+                        }
+                    });
+                });
+            } else {
+                // DESKTOP: Make sure no active states are applied
+                galleryItems.forEach(item => {
+                    item.classList.remove('active');
+                });
+                
+                // Cancel any hover state if user scrolls (better UX)
+                window.addEventListener('scroll', function() {
+                    document.querySelectorAll(':hover').forEach(function(element) {
+                        if (element.classList && element.classList.contains('gallery-item')) {
+                            element.classList.add('no-hover-temp');
+                            setTimeout(function() {
+                                element.classList.remove('no-hover-temp');
+                            }, 100);
+                        }
+                    });
+                }, { passive: true });
+            }
+            
+            // Handle window resize properly with media query listener
+            const mobileMediaQuery = window.matchMedia('(max-width: 768px)');
+            mobileMediaQuery.addEventListener('change', function(e) {
+                // Reload the page to reset all behaviors
+                window.location.reload();
             });
         });
     </script>
