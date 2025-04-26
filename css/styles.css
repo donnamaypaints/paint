@@ -426,12 +426,15 @@ h1 {
 }
 
 .gallery-animate {
-    transition: all 0.5s ease;
+    transition: opacity 0.3s ease, transform 0.4s ease;
+    opacity: 1;
+    transform: translateY(0);
 }
 
 .gallery-animate.hidden {
     opacity: 0;
-    transform: scale(0.9);
+    transform: translateY(20px);
+    pointer-events: none;
 }
 
 /* Responsive adjustments */
@@ -516,6 +519,16 @@ h1 {
     .section-title {
         font-size: 2.5rem;
     }
+    
+    .gallery-categories {
+        gap: 0.6rem;
+        margin-bottom: 1.5rem;
+    }
+    
+    .gallery-category {
+        padding: 0.5rem 1rem;
+        font-size: 0.9rem;
+    }
 }
 
 /* Small phone specific fixes */
@@ -583,14 +596,14 @@ h1 {
         padding: 4rem 0;
     }
     
-    .gallery-category {
-        padding: 0.8rem 1.2rem;
-        font-size: 0.95rem;
+    .gallery-categories {
+        gap: 0.4rem;
+        margin-bottom: 1.2rem;
     }
     
-    .gallery-categories {
-        gap: 1rem;
-        margin-bottom: 2rem;
+    .gallery-category {
+        padding: 0.4rem 0.8rem;
+        font-size: 0.85rem;
     }
 }
 
@@ -598,13 +611,13 @@ h1 {
 .gallery-categories {
     display: flex;
     justify-content: center;
-    gap: 2rem;
-    margin-bottom: 3rem;
+    gap: 1.5rem;
+    margin-bottom: 2.5rem;
     flex-wrap: wrap;
 }
 
 .gallery-category {
-    padding: 1rem 2rem;
+    padding: 0.75rem 1.5rem;
     background-color: rgba(45, 45, 53, 0.7);
     border-left: 3px solid var(--burgundy);
     cursor: pointer;
@@ -638,7 +651,9 @@ h1 {
 
 .gallery-category:hover,
 .gallery-category.active {
+    background-color: var(--burgundy);
     color: var(--light-text);
+    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.2);
 }
 
 /* General Sections */
