@@ -1,0 +1,32 @@
+title: Donna May Paints
+description: Capturing joy through color and texture - Paintings by Donna May Boyes
+url: "https://donnamaypaints.com" # Your production URL
+baseurl: "" # Keep empty if deploying to the root of your domain
+
+markdown: kramdown
+permalink: pretty # Enables clean URLs like /page-name/
+
+# Optional: Default front matter for pages and posts
+# defaults:
+#   - scope:
+#       path: ""
+#       type: "pages" # all .html and .md files in root and subdirectories
+#     values:
+#       layout: "default"
+#   - scope:
+#       path: ""
+#       type: "posts"
+#     values:
+#       layout: "default" # Or a specific 'post' layout
+
+# Exclude from processing.
+exclude:
+  - Gemfile
+  - Gemfile.lock
+  - node_modules
+  - vendor/bundle/
+  - vendor/cache/
+  - vendor/gems/
+  - vendor/ruby/
+  - .jekyll-cache/
+  - STRUCTURE.txt 

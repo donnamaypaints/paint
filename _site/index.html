@@ -1,0 +1,216 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Home - Donna May Paints</title>
+    
+    <!-- Open Graph Meta Tags -->
+    <meta property="og:title" content="Home - Donna May Paints">
+    <meta property="og:description" content="Capturing joy through color and texture - Paintings by Donna May Boyes">
+    
+    <meta property="og:image" content="/images/paint15wide.jpeg">
+    
+    <meta property="og:url" content="http://localhost:4000/">
+    <meta property="og:type" content="website">
+    
+    <!-- Twitter Card data -->
+    <meta name="twitter:card" content="summary_large_image">
+    <!-- Add other Twitter card data if needed, similar to OG tags -->
+
+    <link rel="stylesheet" href="/css/styles.css">
+    <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@300;400;500&family=Merriweather:wght@300;400;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+    
+    <!-- Site-specific favicon -->
+    <link rel="icon" href="/favicon.ico" type="image/x-icon">
+    <!-- Add other favicon links if you have them (apple-touch-icon, etc.) -->
+
+    
+</head>
+<body >
+    <header>
+    <div class="container">
+        <div class="header-content">
+            <a href="/" class="logo">Donna May Paints</a>
+            <button class="hamburger-menu" aria-label="Open navigation menu" aria-expanded="false" aria-controls="main-nav-ul">
+                <span></span>
+                <span></span>
+                <span></span>
+            </button>
+            <nav id="main-nav">
+                <ul id="main-nav-ul">
+                    <li><a href="/">Home</a></li>
+                    <li><a href="/gallery/">Gallery</a></li>
+                    <li><a href="/about/">About/Contact</a></li>
+                    <li><a href="/blog/">Blog</a></li>
+                </ul>
+            </nav>
+        </div>
+    </div>
+</header> 
+
+    <main>
+        <div class="container page-content-wrapper">
+            <section class="hero">
+    <div class="brush-stroke"></div>
+    <div class="container">
+        <div class="hero-main-content">
+            <div class="hero-content">
+                <h1>Capturing <span class="accent">JOY</span> through color and texture</h1>
+                <p>Paintings by Donna May Boyes</p>
+                <a href="/gallery/" class="btn">Explore Gallery</a>
+            </div>
+            <div class="hero-image-container">
+                <img src="/images/paint12.jpeg" alt="Featured Painting">
+            </div>
+        </div>
+    </div>
+</section>
+
+<section class="featured-works">
+    <div class="container">
+        <h2 class="section-title">Featured Works</h2>
+        <div class="gallery-grid">
+            <div class="gallery-item fade-in">
+                <img src="/images/paint6.jpeg" alt="Artwork 1">
+                <div class="gallery-overlay">
+                </div>
+            </div>
+            <div class="gallery-item fade-in">
+                <img src="/images/paint2.jpeg" alt="Artwork 2">
+                <div class="gallery-overlay">
+                </div>
+            </div>
+            <div class="gallery-item fade-in">
+                <img src="/images/paint12.jpeg" alt="Artwork 3">
+                <div class="gallery-overlay">
+                </div>
+            </div>
+            <div class="gallery-item fade-in">
+                <img src="/images/paint16.jpeg" alt="Artwork 4">
+                <div class="gallery-overlay">
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+
+        </div>
+    </main>
+
+    <footer>
+    <div class="container">
+        <div class="social-links">
+            <a href="https://www.instagram.com/donna_may_paints/" target="_blank" rel="noopener noreferrer"><i class="fab fa-instagram"></i></a>
+            <!-- Add other social links here if needed -->
+        </div>
+        <p class="footer-text">&copy; 2025 Donna May Paints. All rights reserved.</p>
+    </div>
+</footer> 
+
+    <script>
+        document.addEventListener('DOMContentLoaded', function() {
+            // Fade in elements as they scroll into view
+            const fadeElements = document.querySelectorAll('.fade-in');
+            
+            const observer = new IntersectionObserver((entries) => {
+                entries.forEach(entry => {
+                    if (entry.isIntersecting) {
+                        entry.target.classList.add('visible');
+                    }
+                });
+            }, { threshold: 0.1 }); // Trigger when 10% of the element is visible
+            
+            fadeElements.forEach(element => {
+                observer.observe(element);
+            });
+
+            // Gallery specific script from gallery.html - to be moved or kept if only for gallery
+            // For now, keeping it here if it's general enough or if gallery page content doesn't load it separately
+            // This should ideally be on the gallery page itself if it's complex and gallery-specific.
+            // However, if the classes .gallery-category, .gallery-item are used elsewhere or are benign, 
+            // it might be okay. Let's assume it might be needed by gallery.html content.
+            if (document.querySelector('.gallery-categories')) {
+                const categories = document.querySelectorAll('.gallery-category');
+                const allGalleryItems = document.querySelectorAll(".gallery-grid .gallery-item"); // More specific selector
+                
+                categories.forEach(category => {
+                    category.addEventListener('click', function() {
+                        const targetCategory = this.getAttribute('data-category');
+                        
+                        categories.forEach(cat => cat.classList.remove('active'));
+                        this.classList.add('active');
+                        
+                        allGalleryItems.forEach(item => {
+                            const itemCategory = item.getAttribute('data-category');
+                            if (targetCategory === 'All' || itemCategory === targetCategory) {
+                                item.style.display = '';
+                                setTimeout(() => item.classList.remove('hidden'), 10); // Animate in
+                            } else {
+                                item.classList.add('hidden');
+                                setTimeout(() => { if(item.classList.contains('hidden')) item.style.display = 'none'; }, 300);
+                            }
+                        });
+                    });
+                });
+
+                function detectImageOrientation() {
+                    const galleryItems = document.querySelectorAll(".gallery-grid .gallery-item");
+                    galleryItems.forEach(item => {
+                        const img = item.querySelector('img');
+                        if (img) {
+                            if (img.complete) {
+                                setOrientation(img, item);
+                            } else {
+                                img.onload = () => setOrientation(img, item);
+                            }
+                        }
+                    });
+                }
+                function setOrientation(img, item) {
+                    item.classList.remove('landscape', 'portrait');
+                    const width = img.naturalWidth;
+                    const height = img.naturalHeight;
+                    if (width > height * 1.2) item.classList.add('landscape');
+                    else if (height > width * 1.2) item.classList.add('portrait');
+                }
+                detectImageOrientation();
+
+                const isMobile = window.matchMedia('(max-width: 768px)').matches;
+                const galleryItemsForMobile = document.querySelectorAll(".gallery-grid .gallery-item");
+
+                if (isMobile) {
+                    galleryItemsForMobile.forEach(item => {
+                        item.addEventListener('click', function(e) {
+                            // Prevent interference if clicking on an overlay link
+                            if (e.target.closest('a')) return;
+
+                            const isActive = this.classList.contains('active');
+                            galleryItemsForMobile.forEach(otherItem => otherItem.classList.remove('active'));
+                            if (!isActive) this.classList.add('active');
+                        });
+                    });
+                } else {
+                    galleryItemsForMobile.forEach(item => item.classList.remove('active'));
+                    // Desktop scroll-hover prevention
+                    // This can be demanding. Consider if it's truly necessary or can be optimized.
+                    window.addEventListener('scroll', function() {
+                        document.querySelectorAll('.gallery-item:hover').forEach(function(element) {
+                            element.classList.add('no-hover-temp');
+                            setTimeout(() => element.classList.remove('no-hover-temp'), 200);
+                        });
+                    }, { passive: true });
+                }
+
+                // Reload on resize might be too disruptive. Consider responsive JS adjustments instead.
+                // const mobileMediaQuery = window.matchMedia('(max-width: 768px)');
+                // mobileMediaQuery.addEventListener('change', function(e) {
+                //     window.location.reload(); 
+                // });
+            }
+        });
+    </script>
+    <script src="/assets/js/main.js"></script>
+</body>
+</html> 

@@ -1,106 +1,51 @@
-<!DOCTYPE html>
-<html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Donna May Paints</title>
-    
-    <!-- Open Graph Meta Tags for social media sharing -->
-    <meta property="og:title" content="Donna May Paints">
-    <meta property="og:description" content="Capturing joy through color and texture - Paintings by Donna May Boyes">
-    <meta property="og:image" content="./images/paint15wide.jpeg">
-    <meta property="og:url" content="https://donnamaypaints.com">
-    <meta property="og:type" content="website">
-    
-    <!-- Twitter Card data -->
-    <meta name="twitter:card" content="summary_large_image">
-    
-    <link rel="stylesheet" href="css/styles.css">
-    <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@300;400;500&display=swap" rel="stylesheet">
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
-</head>
-<body>
-    <header>
-        <div class="container">
-            <div class="header-content">
-                <a href="index" class="logo">Donna May Paints</a>
-                <nav>
-                    <ul>
-                        <li><a href="index">Home</a></li>
-                        <li><a href="gallery">Gallery</a></li>
-                        <li><a href="about">About</a></li>
-                        <li><a href="blog">Blog</a></li>
-                    </ul>
-                </nav>
-            </div>
-        </div>
-    </header>
+---
+layout: default
+title: Home - Donna May Paints
+description: Capturing joy through color and texture - Paintings by Donna May Boyes
+permalink: / # This ensures it's the root page
+image: /images/paint15wide.jpeg # Default OG image for the homepage
+---
 
-    <section class="hero">
-        <div class="brush-stroke"></div>
-        <div class="container">
+<section class="hero">
+    <div class="brush-stroke"></div>
+    <div class="container">
+        <div class="hero-main-content">
             <div class="hero-content">
                 <h1>Capturing <span class="accent">JOY</span> through color and texture</h1>
                 <p>Paintings by Donna May Boyes</p>
-                <a href="gallery" class="btn">Explore Gallery</a>
+                <a href="{{ '/gallery/' | relative_url }}" class="btn">Explore Gallery</a>
+            </div>
+            <div class="hero-image-container">
+                <img src="{{ '/images/paint12.jpeg' | relative_url }}" alt="Featured Painting">
             </div>
         </div>
-    </section>
+    </div>
+</section>
 
-    <section class="featured-works">
-        <div class="container">
-            <h2 class="section-title">Featured Works</h2>
-            <div class="gallery-grid">
-                <div class="gallery-item fade-in">
-                    <img src="images/paint6.jpeg" alt="Artwork 1">
-                    <div class="gallery-overlay">
-                    </div>
+<section class="featured-works">
+    <div class="container">
+        <h2 class="section-title">Featured Works</h2>
+        <div class="gallery-grid">
+            <div class="gallery-item fade-in">
+                <img src="{{ '/images/paint6.jpeg' | relative_url }}" alt="Artwork 1">
+                <div class="gallery-overlay">
                 </div>
-                <div class="gallery-item fade-in">
-                    <img src="images/paint2.jpeg" alt="Artwork 2">
-                    <div class="gallery-overlay">
-                    </div>
+            </div>
+            <div class="gallery-item fade-in">
+                <img src="{{ '/images/paint2.jpeg' | relative_url }}" alt="Artwork 2">
+                <div class="gallery-overlay">
                 </div>
-                <div class="gallery-item fade-in">
-                    <img src="images/paint12.jpeg" alt="Artwork 3">
-                    <div class="gallery-overlay">
-                    </div>
+            </div>
+            <div class="gallery-item fade-in">
+                <img src="{{ '/images/paint12.jpeg' | relative_url }}" alt="Artwork 3">
+                <div class="gallery-overlay">
                 </div>
-                <div class="gallery-item fade-in">
-                    <img src="images/paint16.jpeg" alt="Artwork 4">
-                    <div class="gallery-overlay">
-                    </div>
+            </div>
+            <div class="gallery-item fade-in">
+                <img src="{{ '/images/paint16.jpeg' | relative_url }}" alt="Artwork 4">
+                <div class="gallery-overlay">
                 </div>
             </div>
         </div>
-    </section>
-
-    <footer>
-        <div class="container">
-            <div class="social-links">
-                <a href="https://www.instagram.com/donna_may_paints/"><i class="fab fa-instagram"></i></a>
-            </div>
-            <p class="footer-text">&copy; 2025 Donna May Paints. All rights reserved.</p>
-        </div>
-    </footer>
-
-    <script>
-        document.addEventListener('DOMContentLoaded', function() {
-            // Fade in elements as they scroll into view
-            const fadeElements = document.querySelectorAll('.fade-in');
-            
-            const observer = new IntersectionObserver((entries) => {
-                entries.forEach(entry => {
-                    if (entry.isIntersecting) {
-                        entry.target.classList.add('visible');
-                    }
-                });
-            });
-            
-            fadeElements.forEach(element => {
-                observer.observe(element);
-            });
-        });
-    </script>
-</body>
-</html>
+    </div>
+</section>

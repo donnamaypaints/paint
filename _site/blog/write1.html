@@ -1,0 +1,126 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Upcoming Exhibition: Colors of Memory - Donna May Paints</title>
+    <link rel="stylesheet" href="../css/styles.css">
+    <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@300;400;500&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+    <style>
+        .blog-post {
+            max-width: 800px;
+            margin: 0 auto;
+            padding: 2rem 0;
+        }
+        
+        .blog-post img {
+            width: 100%;
+            height: auto;
+            border-radius: 4px;
+            margin: 2rem 0;
+        }
+        
+        .blog-post .date {
+            color: var(--accent);
+            font-style: italic;
+            margin-bottom: 1rem;
+        }
+        
+        .blog-post p {
+            margin-bottom: 1.5rem;
+            line-height: 1.8;
+        }
+        
+        .blog-post h2 {
+            margin: 2rem 0 1rem;
+            color: var(--light-text);
+        }
+        
+        .blog-post .return-link {
+            display: inline-block;
+            margin-top: 2rem;
+        }
+    </style>
+</head>
+<body>
+    <div class="paint-drip"></div>
+    <header>
+        <div class="container">
+            <div class="header-content">
+                <a href="../index.html" class="logo">Donna May Paints</a>
+                <nav>
+                    <ul>
+                        <li><a href="../index.html">Home</a></li>
+                        <li><a href="../gallery.html">Gallery</a></li>
+                        <li><a href="../about.html">About</a></li>
+                        <li><a href="../blog.html">Blog</a></li>
+                    </ul>
+                </nav>
+            </div>
+        </div>
+    </header>
+
+    <div class="container">
+        <article class="blog-post fade-in">
+            <h1 class="section-title">Upcoming Exhibition: Colors of Memory</h1>
+            <div class="date">June 15, 2023</div>
+            
+            <img src="../images/paint17.jpeg" alt="Exhibition Preview" class="fade-in">
+            
+            <p>I'm thrilled to announce my newest exhibition, "Colors of Memory," opening next month at the Hamilton Gallery. This collection represents two years of exploration into the relationship between memory, emotion, and perception through a vibrant color palette.</p>
+            
+            <p>The exhibition will feature 18 new works, ranging from large-scale canvases to more intimate panel pieces. Throughout this collection, I've been exploring how color can evoke emotional responses and trigger memories – both personal and collective.</p>
+            
+            <h2>Exhibition Details</h2>
+            <p><strong>Opening Reception:</strong> July 14, 2023, 7-10 PM<br>
+            <strong>Exhibition Dates:</strong> July 14 - August 30, 2023<br>
+            <strong>Location:</strong> Hamilton Gallery, 245 Queen Street West, Toronto</p>
+            
+            <p>The opening reception will include a brief artist talk at 8 PM, where I'll discuss my process and the inspirations behind this body of work. Light refreshments will be served, and I would be delighted to see you there.</p>
+            
+            <h2>About the Collection</h2>
+            <p>This series began during the early days of the pandemic when isolation caused me to reflect deeply on memories of places I've traveled and people I've known. Working from memory rather than direct observation created a fascinating filter – details faded, but emotional impressions remained vivid and often amplified.</p>
+            
+            <p>In these works, you'll notice a departure from my previous, more restrained palette. The colors are more saturated and bold, yet they maintain a harmonious relationship that speaks to the way memories coexist in our minds – sometimes contradictory, yet forming a coherent personal narrative.</p>
+            
+            <p>Several pieces incorporate mixed media elements, including collage from my travel journals and textural elements that invite closer inspection. The interplay between smooth and textured surfaces parallels the way memories can be both clear and obscured.</p>
+            
+            <p>I hope you'll join me for this special exhibition. For those unable to attend in person, a virtual gallery tour will be available on my website after the opening.</p>
+            
+            <a href="../blog.html" class="btn return-link">Back to Journal</a>
+        </article>
+    </div>
+
+    <footer>
+        <div class="container">
+            <div class="social-links">
+                <a href="#"><i class="fab fa-instagram"></i></a>
+                <a href="#"><i class="fab fa-facebook"></i></a>
+                <a href="#"><i class="fab fa-pinterest"></i></a>
+                <a href="#"><i class="fab fa-twitter"></i></a>
+            </div>
+            <p class="footer-text">&copy; 2023 Donna May Paints. All rights reserved.</p>
+        </div>
+    </footer>
+
+    <script>
+        document.addEventListener('DOMContentLoaded', function() {
+            // Fade in elements as they scroll into view
+            const fadeElements = document.querySelectorAll('.fade-in');
+            
+            const observer = new IntersectionObserver((entries) => {
+                entries.forEach(entry => {
+                    if (entry.isIntersecting) {
+                        entry.target.classList.add('visible');
+                    }
+                });
+            });
+            
+            fadeElements.forEach(element => {
+                observer.observe(element);
+            });
+        });
+    </script>
+</body>
+</html> 

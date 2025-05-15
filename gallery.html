@@ -1,441 +1,228 @@
-<!DOCTYPE html>
-<html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Gallery - Donna May Paints</title>
+---
+layout: default
+title: Gallery - Donna May Paints
+description: Explore the beautiful artwork collection by Donna May Boyes.
+permalink: /gallery/
+image: /images/paint15wide.jpeg # Default OG image for gallery, or a specific one if preferred
+---
+
+<section class="container">
+    <h1 class="section-title">Gallery</h1>
     
-    <!-- Open Graph Meta Tags for social media sharing -->
-    <meta property="og:title" content="Gallery - Donna May Paints">
-    <meta property="og:description" content="Explore the beautiful artwork collection by Donna May Boyes">
-    <meta property="og:image" content="./images/paint15wide.jpeg">
-    <meta property="og:url" content="https://donnamaypaints.com/gallery">
-    <meta property="og:type" content="website">
+    <div class="gallery-categories">
+        <div class="gallery-category active" data-category="All"><span>All</span></div>
+        <div class="gallery-category" data-category="Landscape"><span>Landscapes</span></div>
+        <div class="gallery-category" data-category="Florals"><span>Florals</span></div>
+        <div class="gallery-category" data-category="Animals"><span>Animals</span></div>
+        <div class="gallery-category" data-category="Still Life"><span>Still Life</span></div>
+        <div class="gallery-category" data-category="Portraits"><span>Portraits</span></div>
+        <div class="gallery-category" data-category="Seasonal"><span>Seasonal</span></div>
+    </div>
     
-    <!-- Twitter Card data -->
-    <meta name="twitter:card" content="summary_large_image">
-    
-    <link rel="stylesheet" href="css/styles.css">
-    <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@300;400;500&display=swap" rel="stylesheet">
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
-</head>
-<body>
-    <header>
-        <div class="container">
-            <div class="header-content">
-                <a href="index" class="logo">Donna May Paints</a>
-                <nav>
-                    <ul>
-                        <li><a href="index">Home</a></li>
-                        <li><a href="gallery">Gallery</a></li>
-                        <li><a href="about">About</a></li>
-                        <li><a href="blog">Blog</a></li>
-                    </ul>
-                </nav>
+    <div class="gallery-grid" id="All-gallery">
+        <div class="gallery-item gallery-animate fade-in" data-category="Animals">
+            <img src="{{ '/images/paint1.jpeg' | relative_url }}" alt="Animals 1">
+            <div class="gallery-overlay">
+                <p>12" x 12" • SOLD</p>
             </div>
         </div>
-    </header>
-
-    <section class="container">
-        <h1 class="section-title">Gallery</h1>
-        
-        <div class="gallery-categories">
-            <div class="gallery-category active" data-category="All"><span>All</span></div>
-            <div class="gallery-category" data-category="Landscape"><span>Landscapes</span></div>
-            <div class="gallery-category" data-category="Florals"><span>Florals</span></div>
-            <div class="gallery-category" data-category="Animals"><span>Animals</span></div>
-            <div class="gallery-category" data-category="Still Life"><span>Still Life</span></div>
-            <div class="gallery-category" data-category="Portraits"><span>Portraits</span></div>
-            <div class="gallery-category" data-category="Seasonal"><span>Seasonal</span></div>
+        <div class="gallery-item gallery-animate fade-in" data-category="Florals">
+            <img src="{{ '/images/paint2.jpeg' | relative_url }}" alt="Florals 1">
+            <div class="gallery-overlay">
+                <p>16" x 20" • SOLD</p>
+            </div>
         </div>
-        
-        <div class="gallery-grid" id="All-gallery">
-            <div class="gallery-item gallery-animate fade-in" data-category="Animals">
-                <img src="images/paint1.jpeg" alt="Animals 1">
-                <div class="gallery-overlay">
-                    <p>12" x 12" • SOLD</p>
-                </div>
+        <div class="gallery-item gallery-animate fade-in" data-category="Landscape">
+            <img src="{{ '/images/paint3.jpeg' | relative_url }}" alt="Landscape 1">
+            <div class="gallery-overlay">
+                <p>20" x 16" • $50</p>
             </div>
-            <div class="gallery-item gallery-animate fade-in" data-category="Florals">
-                <img src="images/paint2.jpeg" alt="Florals 1">
-                <div class="gallery-overlay">
-                    <p>16" x 20" • SOLD</p>
-                </div>
-            </div>
-            <!-- Landscape paintings -->
-            <div class="gallery-item gallery-animate fade-in" data-category="Landscape">
-                <img src="images/paint3.jpeg" alt="Landscape 1">
-                <div class="gallery-overlay">
-                    <p>20" x 16" • $50</p>
-                </div>
-            </div>
-            <div class="gallery-item gallery-animate fade-in" data-category="Still Life">
-                <img src="images/paint4.jpeg" alt="Still Life 1">
-                <div class="gallery-overlay">
-                    <p>8" x 8" • $20</p>
-                </div>
-            </div>
-            <div class="gallery-item gallery-animate fade-in" data-category="Landscape">
-                <img src="images/paint5.jpeg" alt="Landscape 2">
-                <div class="gallery-overlay">
-                    <p>10" x 8" • $50</p>
-                </div>
-            </div>
-            
-            <!-- Floral paintings -->
-            <div class="gallery-item gallery-animate fade-in" data-category="Landscape">
-                <img src="images/paint6.jpeg" alt="Landscape 3">
-                <div class="gallery-overlay">
-                    <p>28" x 16" • $250</p>
-                </div>
-            </div>
-            <div class="gallery-item gallery-animate fade-in" data-category="Animals">
-                <img src="images/paint7.jpeg" alt="Animals 2">
-                <div class="gallery-overlay">
-                    <p>8" x 10" • $90</p>
-                </div>
-            </div>
-            <div class="gallery-item gallery-animate fade-in" data-category="Animals">
-                <img src="images/paint8.jpeg" alt="Animals 3">
-                <div class="gallery-overlay">
-                    <p>8" x 10" • $90</p>
-                </div>
-            </div>
-            
-            <!-- Animal paintings -->
-            <div class="gallery-item gallery-animate fade-in" data-category="Animals">
-                <img src="images/paint9.jpeg" alt="Animals 3.1">
-                <div class="gallery-overlay">
-                    <p>8" x 8" • $65</p>
-                </div>
-            </div>
-            <div class="gallery-item gallery-animate fade-in" data-category="Florals">
-                <img src="images/paint10.jpeg" alt="Florals 2">
-                <div class="gallery-overlay">
-                    <p>16" x 20" • $120</p>
-                </div>
-            </div>
-            <div class="gallery-item gallery-animate fade-in" data-category="Seasonal">
-                <img src="images/paint11.jpeg" alt="Seasonal 1">
-                <div class="gallery-overlay">
-                    <p>12" x 12" • $150</p>
-                </div>
-            </div>
-            <div class="gallery-item gallery-animate fade-in" data-category="Seasonal">
-                <img src="images/paint12.jpeg" alt="Seasonal 2">
-                <div class="gallery-overlay">
-                    <p>12" x 12" • $150</p>
-                </div>
-            </div>
-            
-            <!-- Still Life paintings -->
-            <div class="gallery-item gallery-animate fade-in" data-category="Animals">
-                <img src="images/paint13.jpeg" alt="Animals 4">
-                <div class="gallery-overlay">
-                    <p>12" x 12" • $150</p>
-                </div>
-            </div>
-            <div class="gallery-item gallery-animate fade-in" data-category="Florals">
-                <img src="images/paint14.jpeg" alt="Florals 3">
-                <div class="gallery-overlay">
-                    <p>12" x 12" • $150</p>
-                </div>
-            </div>
-            <div class="gallery-item gallery-animate fade-in" data-category="Animals">
-                <img src="images/paint15.jpeg" alt="Animals 5">
-                <div class="gallery-overlay">
-                    <p>8" x 10" • $75</p>
-                </div>
-            </div>
-            <div class="gallery-item gallery-animate fade-in" data-category="Animals">
-                <img src="images/paint16.jpeg" alt="Animals 6">
-                <div class="gallery-overlay">
-                    <p>12" x 12" • $150</p>
-                </div>
-            </div>
-            
-            <!-- Portrait paintings -->
-            <div class="gallery-item gallery-animate fade-in" data-category="Animals">
-                <img src="images/paint17.jpeg" alt="Animals 7">
-                <div class="gallery-overlay">
-                    <p>12" x 12" • SOLD</p>
-                </div>
-            </div>
-            <div class="gallery-item gallery-animate fade-in" data-category="Landscape">
-                <img src="images/paint18.jpeg" alt="Landscape 4">
-                <div class="gallery-overlay">
-                    <p>19" x 19" • $150</p>
-                </div>
-            </div>
-            <div class="gallery-item gallery-animate fade-in" data-category="Animals">
-                <img src="images/paint19.jpeg" alt="Animals 5">
-                <div class="gallery-overlay">
-                    <p>20" x 20" • SOLD</p>
-                </div>
-            </div>
-            <div class="gallery-item gallery-animate fade-in" data-category="Seasonal">
-                <img src="images/paint20.jpeg" alt="Seasonal 3">
-                <div class="gallery-overlay">
-                    <p>12" x 12" • SOLD</p>
-                </div>
-            </div>
-            
-            <!-- Seasonal paintings -->
-            <div class="gallery-item gallery-animate fade-in" data-category="Landscape">
-                <img src="images/paint21.jpeg" alt="Landscape 5">
-                <div class="gallery-overlay">
-                    <p>SOLD</p>
-                </div>
-            </div>
-            <div class="gallery-item gallery-animate fade-in" data-category="Florals">
-                <img src="images/paint22.jpeg" alt="Florals 4">
-                <div class="gallery-overlay">
-                    <p></p>
-                </div>
-            </div>
-            <div class="gallery-item gallery-animate fade-in" data-category="Florals">
-                <img src="images/paint23.jpeg" alt="Florals 5">
-                <div class="gallery-overlay">
-                    <p></p>
-                </div>
-            </div>
-            <div class="gallery-item gallery-animate fade-in" data-category="Landscape">
-                <img src="images/paint24.jpeg" alt="Landscape 6">
-                <div class="gallery-overlay">
-                    <p>12" x 12" • SOLD</p>
-                </div>
-            </div>
-            
-            <!-- Additional Still Life paintings -->
-            <div class="gallery-item gallery-animate fade-in" data-category="Animals">
-                <img src="images/paint26.jpeg" alt="Animals 8">
-                <div class="gallery-overlay">
-                    <p>16" x 20" • $100</p>
-                </div>
-            </div>
-            <div class="gallery-item gallery-animate fade-in" data-category="Still Life">
-                <img src="images/paint27.jpeg" alt="Still Life 7">
-                <div class="gallery-overlay">
-                    <p>16" x 20" • SOLD</p>
-                </div>
-            </div>
-            <div class="gallery-item gallery-animate fade-in" data-category="Still Life">
-                <img src="images/paint28.jpeg" alt="Still Life 8">
-                <div class="gallery-overlay">
-                    <p>12" x 12" • SOLD</p>
-                </div>
-            </div>
-            <div class="gallery-item gallery-animate fade-in" data-category="Florals">
-                <img src="images/paint29.jpeg" alt="Florals 6">
-                <div class="gallery-overlay">
-                    <p>12" x 12" • $150</p>
-                </div>
-            </div>
-            <div class="gallery-item gallery-animate fade-in" data-category="Still Life">
-                <img src="images/paint30.jpeg" alt="Still Life 9">
-                <div class="gallery-overlay">
-                    <p>12" x 12" • $150</p>
-                </div>
-            </div>
-            <div class="gallery-item gallery-animate fade-in" data-category="Florals">
-                <img src="images/paint31.jpeg" alt="Florals 7">
-                <div class="gallery-overlay">
-                    <p>11" x 14" • $65</p>
-                </div>
-            </div>
-            <div class="gallery-item gallery-animate fade-in" data-category="Seasonal">
-                <img src="images/paint32.jpeg" alt="Seasonal 4">
-                <div class="gallery-overlay">
-                    <p>12" x 12" • $150</p>
-                </div>
-            </div>
-            <div class="gallery-item gallery-animate fade-in" data-category="Seasonal">
-                <img src="images/paint33.jpeg" alt="Seasonal 5">
-                <div class="gallery-overlay">
-                    <p>12" x 12" • $150</p>
-                </div>
-            </div>
-            <div class="gallery-item gallery-animate fade-in" data-category="Seasonal">
-                <img src="images/paint34.jpeg" alt="Seasonal 6">
-                <div class="gallery-overlay">
-                    <p>12" x 12" • $150</p>
-                </div>
-            </div>
-            <div class="gallery-item gallery-animate fade-in" data-category="Animals">
-                <img src="images/paint35.jpeg" alt="Animals 9">
-                <div class="gallery-overlay">
-                    <p>12" x 12" • SOLD</p>
-                </div>
-            </div>
-        <!--</div> -->
-    </section>
-
-    <footer>
-        <div class="container">
-            <div class="social-links">
-                <a href="https://www.instagram.com/donna_may_paints/"><i class="fab fa-instagram"></i></a>
-            </div>
-            <p class="footer-text">&copy; 2025 Donna May Paints. All rights reserved.</p>
         </div>
-    </footer>
-
-    <script>
-        document.addEventListener('DOMContentLoaded', function() {
-            // Fade in elements as they scroll into view
-            const fadeElements = document.querySelectorAll('.fade-in');
-            
-            const observer = new IntersectionObserver((entries) => {
-                entries.forEach(entry => {
-                    if (entry.isIntersecting) {
-                        entry.target.classList.add('visible');
-                    }
-                });
-            });
-            
-            fadeElements.forEach(element => {
-                observer.observe(element);
-            });
-            
-            // Gallery category filtering
-            const categories = document.querySelectorAll('.gallery-category');
-            const allGalleryItems = document.querySelectorAll('.gallery-item');
-            
-            categories.forEach(category => {
-                category.addEventListener('click', function() {
-                    const targetCategory = this.getAttribute('data-category');
-                    
-                    // Highlight selected category
-                    categories.forEach(cat => cat.classList.remove('active'));
-                    this.classList.add('active');
-                    
-                    // Show all items if "All" is selected, otherwise filter
-                    if (targetCategory === 'All') {
-                        allGalleryItems.forEach(item => {
-                            item.style.display = '';
-                            item.classList.remove('hidden');
-                        });
-                    } else {
-                        // First hide all items
-                        allGalleryItems.forEach(item => {
-                            if (item.getAttribute('data-category') !== targetCategory) {
-                                item.classList.add('hidden');
-                                // Only hide completely after transition ends
-                                setTimeout(() => {
-                                    if (item.classList.contains('hidden')) {
-                                        item.style.display = 'none';
-                                    }
-                                }, 300);
-                            }
-                        });
-                        
-                        // Show only items matching the selected category
-                        const matchingItems = document.querySelectorAll(`.gallery-item[data-category="${targetCategory}"]`);
-                        matchingItems.forEach((item, index) => {
-                            item.style.display = '';
-                            // Small delay before removing hidden class for animation
-                            setTimeout(() => {
-                                item.classList.remove('hidden');
-                            }, 50 + (index * 50));
-                        });
-                    }
-                });
-            });
-            
-            // Make all gallery items visible by default when page loads
-            window.addEventListener('load', function() {
-                allGalleryItems.forEach(item => {
-                    item.classList.remove('hidden');
-                });
-            });
-            
-            // Detect image orientation and set appropriate classes
-            function detectImageOrientation() {
-                const galleryItems = document.querySelectorAll('.gallery-item');
-                
-                galleryItems.forEach(item => {
-                    const img = item.querySelector('img');
-                    
-                    // Only process if image is loaded
-                    if (img.complete) {
-                        setOrientation(img, item);
-                    } else {
-                        img.onload = function() {
-                            setOrientation(img, item);
-                        };
-                    }
-                });
-            }
-            
-            function setOrientation(img, item) {
-                // Remove existing orientation classes
-                item.classList.remove('landscape', 'portrait');
-                
-                // Natural dimensions of the image (original size)
-                const width = img.naturalWidth;
-                const height = img.naturalHeight;
-                
-                // Determine orientation
-                if (width > height * 1.2) {
-                    // Landscape (significantly wider than tall)
-                    item.classList.add('landscape');
-                } else if (height > width * 1.2) {
-                    // Portrait (significantly taller than wide)
-                    item.classList.add('portrait');
-                }
-                // If neither, it's roughly square and stays default
-            }
-            
-            // Run orientation detection
-            detectImageOrientation();
-            
-            // Handle different device behaviors
-            const isMobile = window.matchMedia('(max-width: 768px)').matches;
-            const galleryItems = document.querySelectorAll('.gallery-item');
-            
-            if (isMobile) {
-                // MOBILE: Set up touch/click behavior
-                galleryItems.forEach(item => {
-                    item.addEventListener('click', function() {
-                        // Check if already active
-                        const isActive = this.classList.contains('active');
-                        
-                        // Remove active class from all items
-                        galleryItems.forEach(otherItem => {
-                            otherItem.classList.remove('active');
-                        });
-                        
-                        // If wasn't active before, make it active now
-                        if (!isActive) {
-                            this.classList.add('active');
-                        }
-                    });
-                });
-            } else {
-                // DESKTOP: Make sure no active states are applied
-                galleryItems.forEach(item => {
-                    item.classList.remove('active');
-                });
-                
-                // Cancel any hover state if user scrolls (better UX)
-                window.addEventListener('scroll', function() {
-                    document.querySelectorAll(':hover').forEach(function(element) {
-                        if (element.classList && element.classList.contains('gallery-item')) {
-                            element.classList.add('no-hover-temp');
-                            setTimeout(function() {
-                                element.classList.remove('no-hover-temp');
-                            }, 100);
-                        }
-                    });
-                }, { passive: true });
-            }
-            
-            // Handle window resize properly with media query listener
-            const mobileMediaQuery = window.matchMedia('(max-width: 768px)');
-            mobileMediaQuery.addEventListener('change', function(e) {
-                // Reload the page to reset all behaviors
-                window.location.reload();
-            });
-        });
-    </script>
-</body>
-</html> 
+        <div class="gallery-item gallery-animate fade-in" data-category="Still Life">
+            <img src="{{ '/images/paint4.jpeg' | relative_url }}" alt="Still Life 1">
+            <div class="gallery-overlay">
+                <p>8" x 8" • $20</p>
+            </div>
+        </div>
+        <div class="gallery-item gallery-animate fade-in" data-category="Landscape">
+            <img src="{{ '/images/paint5.jpeg' | relative_url }}" alt="Landscape 2">
+            <div class="gallery-overlay">
+                <p>10" x 8" • $50</p>
+            </div>
+        </div>
+        <div class="gallery-item gallery-animate fade-in" data-category="Landscape">
+            <img src="{{ '/images/paint6.jpeg' | relative_url }}" alt="Landscape 3">
+            <div class="gallery-overlay">
+                <p>28" x 16" • $250</p>
+            </div>
+        </div>
+        <div class="gallery-item gallery-animate fade-in" data-category="Animals">
+            <img src="{{ '/images/paint7.jpeg' | relative_url }}" alt="Animals 2">
+            <div class="gallery-overlay">
+                <p>8" x 10" • $90</p>
+            </div>
+        </div>
+        <div class="gallery-item gallery-animate fade-in" data-category="Animals">
+            <img src="{{ '/images/paint8.jpeg' | relative_url }}" alt="Animals 3">
+            <div class="gallery-overlay">
+                <p>8" x 10" • $90</p>
+            </div>
+        </div>
+        <div class="gallery-item gallery-animate fade-in" data-category="Animals">
+            <img src="{{ '/images/paint9.jpeg' | relative_url }}" alt="Animals 3.1">
+            <div class="gallery-overlay">
+                <p>8" x 8" • $65</p>
+            </div>
+        </div>
+        <div class="gallery-item gallery-animate fade-in" data-category="Florals">
+            <img src="{{ '/images/paint10.jpeg' | relative_url }}" alt="Florals 2">
+            <div class="gallery-overlay">
+                <p>16" x 20" • $120</p>
+            </div>
+        </div>
+        <div class="gallery-item gallery-animate fade-in" data-category="Seasonal">
+            <img src="{{ '/images/paint11.jpeg' | relative_url }}" alt="Seasonal 1">
+            <div class="gallery-overlay">
+                <p>12" x 12" • $150</p>
+            </div>
+        </div>
+        <div class="gallery-item gallery-animate fade-in" data-category="Seasonal">
+            <img src="{{ '/images/paint12.jpeg' | relative_url }}" alt="Seasonal 2">
+            <div class="gallery-overlay">
+                <p>12" x 12" • $150</p>
+            </div>
+        </div>
+        <div class="gallery-item gallery-animate fade-in" data-category="Animals">
+            <img src="{{ '/images/paint13.jpeg' | relative_url }}" alt="Animals 4">
+            <div class="gallery-overlay">
+                <p>12" x 12" • $150</p>
+            </div>
+        </div>
+        <div class="gallery-item gallery-animate fade-in" data-category="Florals">
+            <img src="{{ '/images/paint14.jpeg' | relative_url }}" alt="Florals 3">
+            <div class="gallery-overlay">
+                <p>12" x 12" • $150</p>
+            </div>
+        </div>
+        <div class="gallery-item gallery-animate fade-in" data-category="Animals">
+            <img src="{{ '/images/paint15.jpeg' | relative_url }}" alt="Animals 5">
+            <div class="gallery-overlay">
+                <p>8" x 10" • $75</p>
+            </div>
+        </div>
+        <div class="gallery-item gallery-animate fade-in" data-category="Animals">
+            <img src="{{ '/images/paint16.jpeg' | relative_url }}" alt="Animals 6">
+            <div class="gallery-overlay">
+                <p>12" x 12" • $150</p>
+            </div>
+        </div>
+        <div class="gallery-item gallery-animate fade-in" data-category="Animals">
+            <img src="{{ '/images/paint17.jpeg' | relative_url }}" alt="Animals 7">
+            <div class="gallery-overlay">
+                <p>12" x 12" • SOLD</p>
+            </div>
+        </div>
+        <div class="gallery-item gallery-animate fade-in" data-category="Landscape">
+            <img src="{{ '/images/paint18.jpeg' | relative_url }}" alt="Landscape 4">
+            <div class="gallery-overlay">
+                <p>19" x 19" • $150</p>
+            </div>
+        </div>
+        <div class="gallery-item gallery-animate fade-in" data-category="Animals">
+            <img src="{{ '/images/paint19.jpeg' | relative_url }}" alt="Animals 5">
+            <div class="gallery-overlay">
+                <p>20" x 20" • SOLD</p>
+            </div>
+        </div>
+        <div class="gallery-item gallery-animate fade-in" data-category="Seasonal">
+            <img src="{{ '/images/paint20.jpeg' | relative_url }}" alt="Seasonal 3">
+            <div class="gallery-overlay">
+                <p>12" x 12" • SOLD</p>
+            </div>
+        </div>
+        <div class="gallery-item gallery-animate fade-in" data-category="Landscape">
+            <img src="{{ '/images/paint21.jpeg' | relative_url }}" alt="Landscape 5">
+            <div class="gallery-overlay">
+                <p>SOLD</p>
+            </div>
+        </div>
+        <div class="gallery-item gallery-animate fade-in" data-category="Florals">
+            <img src="{{ '/images/paint22.jpeg' | relative_url }}" alt="Florals 4">
+            <div class="gallery-overlay">
+                <p></p>
+            </div>
+        </div>
+        <div class="gallery-item gallery-animate fade-in" data-category="Florals">
+            <img src="{{ '/images/paint23.jpeg' | relative_url }}" alt="Florals 5">
+            <div class="gallery-overlay">
+                <p></p>
+            </div>
+        </div>
+        <div class="gallery-item gallery-animate fade-in" data-category="Landscape">
+            <img src="{{ '/images/paint24.jpeg' | relative_url }}" alt="Landscape 6">
+            <div class="gallery-overlay">
+                <p>12" x 12" • SOLD</p>
+            </div>
+        </div>
+        <div class="gallery-item gallery-animate fade-in" data-category="Animals">
+            <img src="{{ '/images/paint26.jpeg' | relative_url }}" alt="Animals 8">
+            <div class="gallery-overlay">
+                <p>16" x 20" • $100</p>
+            </div>
+        </div>
+        <div class="gallery-item gallery-animate fade-in" data-category="Still Life">
+            <img src="{{ '/images/paint27.jpeg' | relative_url }}" alt="Still Life 7">
+            <div class="gallery-overlay">
+                <p>16" x 20" • SOLD</p>
+            </div>
+        </div>
+        <div class="gallery-item gallery-animate fade-in" data-category="Seasonal">
+            <img src="{{ '/images/paint28.jpeg' | relative_url }}" alt="Seasonal 4">
+            <div class="gallery-overlay">
+                <p>12" x 12" • SOLD</p>
+            </div>
+        </div>
+        <div class="gallery-item gallery-animate fade-in" data-category="Florals">
+            <img src="{{ '/images/paint29.jpeg' | relative_url }}" alt="Florals 6">
+            <div class="gallery-overlay">
+                <p>12" x 12" • $150</p>
+            </div>
+        </div>
+        <div class="gallery-item gallery-animate fade-in" data-category="Seasonal">
+            <img src="{{ '/images/paint30.jpeg' | relative_url }}" alt="Seasonal 5">
+            <div class="gallery-overlay">
+                <p>12" x 12" • $150</p>
+            </div>
+        </div>
+        <div class="gallery-item gallery-animate fade-in" data-category="Florals">
+            <img src="{{ '/images/paint31.jpeg' | relative_url }}" alt="Florals 7">
+            <div class="gallery-overlay">
+                <p>11" x 14" • $65</p>
+            </div>
+        </div>
+        <div class="gallery-item gallery-animate fade-in" data-category="Seasonal">
+            <img src="{{ '/images/paint32.jpeg' | relative_url }}" alt="Seasonal 4">
+            <div class="gallery-overlay">
+                <p>12" x 12" • $150</p>
+            </div>
+        </div>
+        <div class="gallery-item gallery-animate fade-in" data-category="Seasonal">
+            <img src="{{ '/images/paint33.jpeg' | relative_url }}" alt="Seasonal 5">
+            <div class="gallery-overlay">
+                <p>12" x 12" • $150</p>
+            </div>
+        </div>
+        <div class="gallery-item gallery-animate fade-in" data-category="Seasonal">
+            <img src="{{ '/images/paint34.jpeg' | relative_url }}" alt="Seasonal 6">
+            <div class="gallery-overlay">
+                <p>12" x 12" • $150</p>
+            </div>
+        </div>
+        <div class="gallery-item gallery-animate fade-in" data-category="Animals">
+            <img src="{{ '/images/paint35.jpeg' | relative_url }}" alt="Animals 9">
+            <div class="gallery-overlay">
+                <p>12" x 12" • SOLD</p>
+            </div>
+        </div>
+    </div>
+</section> 

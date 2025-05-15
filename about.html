@@ -1,110 +1,50 @@
-<!DOCTYPE html>
-<html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>About - Donna May Paints</title>
-    
-    <!-- Open Graph Meta Tags for social media sharing -->
-    <meta property="og:title" content="About - Donna May Paints">
-    <meta property="og:description" content="Learn about Canadian artist Donna May Boyes and her unique painting style">
-    <meta property="og:image" content="./images/paint15wide.jpeg">
-    <meta property="og:url" content="https://donnamaypaints.com/about">
-    <meta property="og:type" content="website">
-    
-    <!-- Twitter Card data -->
-    <meta name="twitter:card" content="summary_large_image">
-    
-    <link rel="stylesheet" href="css/styles.css">
-    <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@300;400;500&family=Merriweather:wght@300;400;700&display=swap" rel="stylesheet">
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
-</head>
-<body>
-    <header>
-        <div class="container">
-            <div class="header-content">
-                <a href="index" class="logo">Donna May Paints</a>
-                <nav>
-                    <ul>
-                        <li><a href="index">Home</a></li>
-                        <li><a href="gallery">Gallery</a></li>
-                        <li><a href="about">About</a></li>
-                        <li><a href="blog">Blog</a></li>
-                    </ul>
-                </nav>
-            </div>
-        </div>
-    </header>
+---
+layout: default
+title: About - Donna May Paints
+description: Learn about Canadian artist Donna May Boyes and her unique painting style.
+permalink: /about/
+image: /images/paint4.jpeg # Specific OG image for the about page
+---
 
-    <section class="container">
-        <h1 class="section-title">About the Artist</h1>
-        
-        <div class="about-section">
-            <div class="about-image fade-in">
-                <img src="images/paint4.jpeg" alt="Donna May Boyes">
-            </div>
-            <div class="about-content fade-in">
-                <h2>Donna May Boyes</h2>
-                <p>Canadian artist Donna May Boyes experimented with painting throughout her life. Now, an empty nester with her husband and grandmother of 1, she has found a new passion for painting.</p>
-                <p>Inspired by the instruction of Ali Kay, Donna's work utilizes modern impression and optical blending.</p>
-                <p>Small strokes of bold colour are carefully placed side by side rather than blending them.</p>
-                <p>This technique encourages the viewer's perception to mix the colours, playing with the nature of human vision.</p>
-                <div class="bio-details">
-                    <p>Donna's work aims to evoke a joyous celebration of life's beauty.</p>
-                </div>
+<section class="container">
+    <h1 class="section-title">About the Artist</h1>
+    
+    <div class="about-section">
+        <div class="about-image fade-in">
+            <img src="{{ '/images/paint4.jpeg' | relative_url }}" alt="Donna May Boyes">
+        </div>
+        <div class="about-content fade-in">
+            <h2>Donna May Boyes</h2>
+            <p>Canadian artist Donna May Boyes experimented with painting throughout her life. Now, an empty nester with her husband and grandmother of 1, she has found a new passion for painting.</p>
+            <p>Inspired by the instruction of Ali Kay, Donna's work utilizes modern impression and optical blending.</p>
+            <p>Small strokes of bold colour are carefully placed side by side rather than blending them.</p>
+            <p>This technique encourages the viewer's perception to mix the colours, playing with the nature of human vision.</p>
+            <div class="bio-details">
+                <p>Donna's work aims to evoke a joyous celebration of life's beauty.</p>
             </div>
         </div>
-        
-        <div class="contact-form fade-in">
-            <h2>Get in Touch</h2>
-            <form action="https://formspree.io/f/mjkwkeod" method="POST">
-                <div class="form-group">
-                    <label for="name">Name</label>
-                    <input type="text" id="name" name="name" required>
-                </div>
-                <div class="form-group">
-                    <label for="email">Email</label>
-                    <input type="email" id="email" name="email" required>
-                </div>
-                <div class="form-group">
-                    <label for="subject">Subject</label>
-                    <input type="text" id="subject" name="subject" required>
-                </div>
-                <div class="form-group">
-                    <label for="message">Message</label>
-                    <textarea id="message" name="message" required></textarea>
-                </div>
-                <button type="submit" class="btn">Send Message</button>
-            </form>
-        </div>
-    </section>
-
-    <footer>
-        <div class="container">
-            <div class="social-links">
-                <a href="https://www.instagram.com/donna_may_paints/"><i class="fab fa-instagram"></i></a>
+    </div>
+    
+    <div class="contact-form fade-in">
+        <h2>Get in Touch</h2>
+        <form action="https://formspree.io/f/mjkwkeod" method="POST">
+            <div class="form-group">
+                <label for="name">Name</label>
+                <input type="text" id="name" name="name" required>
             </div>
-            <p class="footer-text">&copy; 2025 Donna May Paints. All rights reserved.</p>
-        </div>
-    </footer>
-
-    <script>
-        document.addEventListener('DOMContentLoaded', function() {
-            // Fade in elements as they scroll into view
-            const fadeElements = document.querySelectorAll('.fade-in');
-            
-            const observer = new IntersectionObserver((entries) => {
-                entries.forEach(entry => {
-                    if (entry.isIntersecting) {
-                        entry.target.classList.add('visible');
-                    }
-                });
-            });
-            
-            fadeElements.forEach(element => {
-                observer.observe(element);
-            });
-        });
-    </script>
-</body>
-</html> 
+            <div class="form-group">
+                <label for="email">Email</label>
+                <input type="email" id="email" name="email" required>
+            </div>
+            <div class="form-group">
+                <label for="subject">Subject</label>
+                <input type="text" id="subject" name="subject" required>
+            </div>
+            <div class="form-group">
+                <label for="message">Message</label>
+                <textarea id="message" name="message" required></textarea>
+            </div>
+            <button type="submit" class="btn">Send Message</button>
+        </form>
+    </div>
+</section> 

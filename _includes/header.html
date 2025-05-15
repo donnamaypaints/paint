@@ -1,0 +1,20 @@
+<header>
+    <div class="container">
+        <div class="header-content">
+            <a href="{{ '/' | relative_url }}" class="logo">{{ site.title | default: 'Donna May Paints' }}</a>
+            <button class="hamburger-menu" aria-label="Open navigation menu" aria-expanded="false" aria-controls="main-nav-ul">
+                <span></span>
+                <span></span>
+                <span></span>
+            </button>
+            <nav id="main-nav">
+                <ul id="main-nav-ul">
+                    <li><a href="{{ '/' | relative_url }}">Home</a></li>
+                    <li><a href="{{ '/gallery/' | relative_url }}">Gallery</a></li>
+                    <li><a href="{{ '/about/' | relative_url }}">About/Contact</a></li>
+                    <li><a href="{{ '/blog/' | relative_url }}">Blog</a></li>
+                </ul>
+            </nav>
+        </div>
+    </div>
+</header> 
