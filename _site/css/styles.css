@@ -1037,8 +1037,19 @@ footer::before {
     color: var(--off-white);
 }
 
+.blog-title a {
+    color: #E8ADAA; /* Rosy Pink */
+    text-decoration: none; /* Keep link clean */
+    transition: color 0.3s ease;
+}
+
+.blog-card:hover .blog-title a {
+    color: #D49A97; /* Slightly darker/different rosy pink on card hover */
+}
+
 .blog-card:hover .blog-title {
-    color: var(--accent-light);
+    /* This rule for .blog-title might conflict or be redundant now, review */
+    color: var(--accent-light); /* Original hover color for the H3 itself */
 }
 
 .blog-excerpt {
