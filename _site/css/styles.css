@@ -503,6 +503,8 @@ h1 {
 
     .about-section {
         grid-template-columns: 1fr;
+        gap: 2rem;
+        padding: 3rem 0;
     }
     
     .section-title {
@@ -530,6 +532,15 @@ h1 {
 
     h1 {
         font-size: 3.2rem;
+    }
+
+    .about-image {
+        order: -1; /* Ensure image comes first on mobile */
+        margin-bottom: 1rem;
+    }
+
+    .about-content {
+        order: 1;
     }
 }
 
@@ -670,6 +681,17 @@ h1 {
     
     .about-section {
         grid-template-columns: 1fr;
+        gap: 2rem;
+        padding: 3rem 0;
+    }
+    
+    .about-image {
+        order: -1; /* Ensure image comes first on mobile */
+        margin-bottom: 1rem;
+    }
+
+    .about-content {
+        order: 1;
     }
     
     .blog-grid {
@@ -1433,3 +1455,33 @@ footer::before {
 /* body.no-scroll { 
     overflow: hidden;
 } */
+
+/* Specific mobile fix for contact page */
+@media (max-width: 768px) {
+    .container .about-section {
+        display: grid !important;
+        grid-template-columns: 1fr !important;
+        grid-template-rows: auto auto !important;
+        gap: 2rem !important;
+        padding: 3rem 0 !important;
+    }
+    
+    .container .about-section .about-image {
+        order: -1 !important;
+        grid-row: 1 !important;
+        margin-bottom: 1rem !important;
+    }
+
+    .container .about-section .about-content {
+        order: 1 !important;
+        grid-row: 2 !important;
+    }
+}
+
+/* Even more specific for very small screens */
+@media (max-width: 480px) {
+    .container .about-section {
+        padding: 2rem 0 !important;
+        gap: 1.5rem !important;
+    }
+}
