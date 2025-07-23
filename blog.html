@@ -9,6 +9,19 @@ permalink: /blog/
     <h1 class="section-title">Donna May Writes</h1>
     
     <div class="blog-grid">
+        <!-- Manual blog posts -->
+        <div class="blog-card fade-in">
+            <div class="blog-image">
+                <a href="/blog/write2"><img src="/images/write2.jpg" alt="The Art of Failure"></a>
+            </div>
+            <div class="blog-content">
+                <div class="blog-date">January 15, 2024</div>
+                <h3 class="blog-title"><a href="/blog/write2">The Art of Failure</a></h3>
+                <p class="blog-excerpt">This is the result of my first attempt at a self portrait. For weeks, a partially completed version of this painting haunted the corner of my studio, staring back at me, a silent testament to a fear I couldn't quite articulate...</p>
+                <a href="/blog/write2" class="btn">Read More</a>
+            </div>
+        </div>
+
         {% assign posts_exist = false %}
         {% for post in site.posts %}
             {% assign posts_exist = true %}
