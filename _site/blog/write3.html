@@ -1,0 +1,175 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Scot's Place - Donna May Paints</title>
+    <link rel="stylesheet" href="/css/styles.css">
+    <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@300;400;500&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+    <style>
+        .blog-post {
+            max-width: 1000px;
+            margin: 0 auto;
+            padding: 2rem 0;
+        }
+
+        .blog-post img,
+        .blog-post video {
+            width: 100%;
+            height: auto;
+            border-radius: 4px;
+        }
+
+        .blog-post .hero-img {
+            max-width: 640px;
+            margin: 0 auto 2rem;
+            display: block;
+        }
+
+        .blog-post .date {
+            color: var(--accent);
+            font-style: italic;
+            margin-bottom: 1rem;
+        }
+
+        .blog-post p {
+            margin-bottom: 1.5rem;
+            line-height: 1.8;
+            font-size: 1.1rem;
+        }
+
+        .blog-post h2 {
+            margin: 2rem 0 1rem;
+            color: var(--light-text);
+        }
+
+        .content-media {
+            display: flex;
+            gap: 2rem;
+            align-items: flex-start;
+            margin-top: 2rem;
+        }
+
+        .text-block {
+            flex: 2;
+        }
+
+        .gallery-grid {
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            gap: 1rem;
+            margin-top: 1rem;
+        }
+
+        .gallery-grid img {
+            width: 100%;
+            height: 280px;
+            object-fit: cover;
+            border: 1px solid rgba(255, 255, 255, 0.2);
+            border-radius: 4px;
+        }
+
+        .gallery-section {
+            margin-top: 2rem;
+            margin-bottom: 3rem;
+            padding-bottom: 2rem;
+        }
+
+        .return-link {
+            display: inline-block;
+            margin-top: 2rem;
+        }
+
+        @media (max-width: 900px) {
+            .content-media {
+                flex-direction: column;
+            }
+
+            .gallery-grid {
+                grid-template-columns: 1fr;
+            }
+
+            .gallery-grid img {
+                height: 320px;
+            }
+        }
+    </style>
+</head>
+<body>
+    <div class="paint-drip"></div>
+    <header>
+        <div class="container">
+            <div class="header-content">
+                <a href="/" class="logo">Donna May Paints</a>
+                <nav>
+                    <ul>
+                        <li><a href="/">Home</a></li>
+                        <li><a href="/gallery">Gallery</a></li>
+                        <li><a href="/about">About</a></li>
+                        <li><a href="/blog">Blog</a></li>
+                    </ul>
+                </nav>
+            </div>
+        </div>
+    </header>
+
+    <div class="container">
+        <article class="blog-post fade-in">
+            <h1 class="section-title">Scot's Place</h1>
+            <div class="date">December 10, 2025</div>
+
+            <div class="content-media">
+                <div class="text-block">
+                    <p>A few years ago, members of our extended family suffered the heartbreaking loss of their adult son, Scot, in a tragic accident. Recently, they returned to a place of beauty to scatter his ashes, and they captured that moment in a photograph filled with love, grief, and quiet reverence.</p>
+
+                    <p>When they asked me to paint that image in my own style, I felt deeply honoured. As I studied the photo, I was moved by its stillness — the tenderness in the landscape, the way the light seemed to hold their memories. On the canvas, I wanted to give the moment even more depth… rich colour, more soul, and above all, a feeling of peace surrounding their son’s memory.</p>
+
+                    <p>I poured my heart into every brushstroke. I hope that love comes through, and that the painting brings them even a small measure of comfort.</p>
+                    <img src="/images/write3/scot2.jpeg" alt="Painting of Scot's Place" class="hero-img fade-in">
+
+
+                    <div class="gallery-section">
+                        <h2>Scot's Place:</h2>
+                        <div class="gallery-grid">
+                            <img src="/images/write3/scot4.jpeg" alt="Family in quiet reflection">
+                            <img src="/images/write3/scot1.jpeg" alt="Shoreline bathed in soft light">
+                            <img src="/images/write3/scot3.jpeg" alt="The trees framing their moment of remembrance">
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <a href="/blog" class="btn return-link">Back to Journal</a>
+        </article>
+    </div>
+
+    <footer>
+        <div class="container">
+            <div class="social-links">
+                <a href="https://www.instagram.com/donna_may_paints/" target="_blank" rel="noopener noreferrer"><i class="fab fa-instagram"></i></a>
+                <a href="https://www.facebook.com/donnamayboyes" target="_blank" rel="noopener noreferrer"><i class="fab fa-facebook"></i></a>
+            </div>
+            <p class="footer-text">&copy; 2025 Donna May Paints. All rights reserved.</p>
+        </div>
+    </footer>
+
+    <script>
+        document.addEventListener('DOMContentLoaded', function() {
+            const fadeElements = document.querySelectorAll('.fade-in');
+
+            const observer = new IntersectionObserver((entries) => {
+                entries.forEach(entry => {
+                    if (entry.isIntersecting) {
+                        entry.target.classList.add('visible');
+                    }
+                });
+            });
+
+            fadeElements.forEach(element => {
+                observer.observe(element);
+            });
+        });
+    </script>
+</body>
+</html>

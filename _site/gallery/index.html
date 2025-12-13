@@ -291,35 +291,134 @@
         <div class="gallery-item gallery-animate fade-in" data-category="Animals">
             <img src="/images/paint39.jpeg" alt="Animals 12">
             <div class="gallery-overlay">
-                <p>12" x 12" • $150</p>
+                <p>12" x 12" • $120</p>
             </div>
         </div>
         <div class="gallery-item gallery-animate fade-in" data-category="Florals">
             <img src="/images/paint40.jpeg" alt="Florals 8">
             <div class="gallery-overlay">
-                <p>12" x 12" • $150</p>
+                <p>12" x 12" • $120</p>
             </div>
         </div>
         <div class="gallery-item gallery-animate fade-in" data-category="Landscape">
             <img src="/images/paint41.jpeg" alt="Landscape 8">
             <div class="gallery-overlay">
-                <p>16" x 20" • $150</p>
+                <p>11" x 14" • $120</p>
             </div>
         </div>
         <div class="gallery-item gallery-animate fade-in" data-category="Still Life">
             <img src="/images/paint42.jpeg" alt="Still Life 9">
             <div class="gallery-overlay">
-                <p>20" x 16" • $150</p>
+                <p>14" x 11" • $120</p>
             </div>
         </div>
         <div class="gallery-item gallery-animate fade-in" data-category="Seasonal">
             <img src="/images/paint43.jpeg" alt="Seasonal 7">
             <div class="gallery-overlay">
-                <p>12" x 12" • $150</p>
+                <p>12" x 12" • $120</p>
+            </div>
+        </div>
+        <div class="gallery-item gallery-animate fade-in" data-category="Landscape">
+            <img src="/images/paint44.jpeg" alt="Landscape 9">
+            <div class="gallery-overlay">
+                <p>9" x 12" • SOLD</p>
+            </div>
+        </div>
+        <div class="gallery-item gallery-animate fade-in" data-category="Florals">
+            <img src="/images/paint45.jpeg" alt="Florals 9" data-framed-src="/images/paint45-framed.jpeg" data-framed-caption='Framed Florals 9 • 16" x 20" • $300'>
+            <div class="gallery-overlay">
+                <p>16" x 20" • $250 ($300 framed)</p>
+            </div>
+        </div>
+        <div class="gallery-item gallery-animate fade-in" data-category="Animals">
+            <img src="/images/paint46.jpeg" alt="Animals 13">
+            <div class="gallery-overlay">
+                <p>9" x 12" • SOLD</p>
+            </div>
+        </div>
+        <div class="gallery-item gallery-animate fade-in" data-category="Landscape">
+            <img src="/images/paint47.jpeg" alt="Landscape 10">
+            <div class="gallery-overlay">
+                <p>12" x 12" • $75</p>
+            </div>
+        </div>
+        <div class="gallery-item gallery-animate fade-in" data-category="Seasonal">
+            <img src="/images/paint48.jpeg" alt="Seasonal 8">
+            <div class="gallery-overlay">
+                <p>12" x 12" • $120</p>
             </div>
         </div>
     </div>
 </section> 
+
+<div id="framed-modal" class="framed-modal" aria-hidden="true">
+    <div class="framed-modal__content" role="dialog" aria-modal="true" aria-label="Framed painting preview">
+        <button type="button" class="framed-modal__close" aria-label="Close framed artwork view">&times;</button>
+        <img src="" alt="Framed Florals 9" />
+        <p class="framed-modal__caption">Rosy Ranunculus 9" • 16" x 20" • $300</p>
+    </div>
+</div>
+
+<script>
+document.addEventListener('DOMContentLoaded', () => {
+    const modal = document.getElementById('framed-modal');
+    if (!modal) {
+        return;
+    }
+
+    const modalImage = modal.querySelector('img');
+    const modalCaption = modal.querySelector('.framed-modal__caption');
+    const closeButton = modal.querySelector('.framed-modal__close');
+    const framedTriggers = document.querySelectorAll('[data-framed-src]');
+
+    if (!modalImage || !closeButton) {
+        return;
+    }
+
+    const openModal = (src, alt, caption) => {
+        modalImage.src = src;
+        modalImage.alt = alt;
+        if (caption && modalCaption) {
+            modalCaption.textContent = caption;
+        }
+        modal.classList.add('is-visible');
+        modal.setAttribute('aria-hidden', 'false');
+        document.body.classList.add('no-scroll');
+    };
+
+    const closeModal = () => {
+        modal.classList.remove('is-visible');
+        modal.setAttribute('aria-hidden', 'true');
+        document.body.classList.remove('no-scroll');
+    };
+
+    framedTriggers.forEach((trigger) => {
+        trigger.addEventListener('click', () => {
+            const framedSrc = trigger.getAttribute('data-framed-src');
+            if (!framedSrc) {
+                return;
+            }
+
+            const framedCaption = trigger.dataset.framedCaption;
+            const altText = trigger.alt ? `Framed ${trigger.alt}` : 'Framed artwork';
+            openModal(framedSrc, altText, framedCaption);
+        });
+    });
+
+    closeButton.addEventListener('click', closeModal);
+    modal.addEventListener('click', (event) => {
+        if (event.target === modal) {
+            closeModal();
+        }
+    });
+
+    document.addEventListener('keydown', (event) => {
+        if (event.key === 'Escape' && modal.classList.contains('is-visible')) {
+            closeModal();
+        }
+    });
+});
+</script>
         </div>
     </main>
 
