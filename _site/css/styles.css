@@ -443,14 +443,8 @@ h1 {
     }
 
     .blog-card {
-        width: calc(100% - 2rem);
-        max-width: 100%;
-        box-sizing: border-box !important;
-        overflow-x: hidden;
-        padding-left: 0;
-        padding-right: 0;
-        margin-left: auto;
-        margin-right: auto;
+        width: 100%;
+        box-sizing: border-box;
     }
 
     .blog-image {
@@ -696,10 +690,6 @@ h1 {
 
     .about-content {
         order: 1;
-    }
-    
-    .blog-grid {
-        grid-template-columns: repeat(auto-fill, minmax(280px, 1fr));
     }
     
     .section-title {
@@ -1556,4 +1546,19 @@ footer::before {
     font-size: 0.95rem;
     letter-spacing: 0.08em;
     color: var(--accent-light);
+}
+
+/* Fix blog grid horizontal scroll on mobile */
+@media (max-width: 768px) {
+    .blog-grid {
+        display: flex;
+        flex-direction: column;
+        gap: 2rem;
+        width: 100%;
+    }
+    
+    .blog-card {
+        width: 100%;
+        max-width: 100%;
+    }
 }
